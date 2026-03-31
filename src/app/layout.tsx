@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { companyProfile } from "@/data/company";
+import { buildRouteMetadata } from "@/lib/seo";
+import { ROUTES } from "@/lib/site";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +17,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const homeMetadata = buildRouteMetadata({ route: ROUTES.home });
+
 export const metadata: Metadata = {
-  title: "Crucial Recycling | Rubbish Removal West Midlands",
-  description: "Licensed, fast, eco-friendly waste removal and house clearance in the West Midlands.",
+  ...homeMetadata,
+  metadataBase: new URL("https://www.crucialrecycling.co.uk"),
+  applicationName: companyProfile.brandName,
+  category: "waste removal",
+  keywords: [
+    "rubbish removal West Midlands",
+    "house clearance West Midlands",
+    "bulky waste collection",
+    "commercial waste collection",
+  ],
+  title: {
+    default: homeMetadata.title ?? companyProfile.brandName,
+    template: `%s | ${companyProfile.brandName}`,
+  },
 };
 
 export default function RootLayout({
