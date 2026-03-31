@@ -1,5 +1,3 @@
-import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
-import { SiteFooter } from "@/components/layout/site-footer";
 import { AreasSection } from "@/components/sections/areas-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
@@ -49,8 +47,6 @@ export default function Home(): JSX.Element {
           <FinalCtaSection />
         </SectionFrame>
       </main>
-      <SiteFooter />
-      <MobileStickyCta />
     </>
   );
 }
