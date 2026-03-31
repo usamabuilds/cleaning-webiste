@@ -163,3 +163,92 @@ Patterns *not present yet*: service layer, DTO validation, adapters, repositorie
 - Replace placeholders early (metadata, phone/WhatsApp hrefs, README) to prevent production leakage.
 - If forms are added, centralize validation in `src/lib/*` and types in `src/types/*` to preserve separation.
 - Avoid introducing backend/API complexity until project rules change; current architecture is static-first.
+
+## 13) How to build components in this repo (practical blueprint)
+
+This section translates the current repository style into concrete build rules for navbar, hero, pages, footer, and shared components.
+
+### A. Navbar (`src/components/layout/site-header.tsx`)
+- Keep it as a **layout shell component** with minimal business logic.
+- Structure:
+  1. Outer semantic `<header>` + container wrapper using spacing consistent with `section-frame`.
+  2. Brand block (text/logo).
+  3. Primary nav links (phase-1 routes only).
+  4. High-priority CTAs: call + WhatsApp (mobile-visible).
+- Styling:
+  - Reuse global layer semantics (`layer-base` or a single `layer-glass` shell only).
+  - Avoid nested translucent wrappers; follow guardrails in `globals.css`.
+- Behavior:
+  - Keep mobile-first (menu collapses or stacks without heavy JS).
+  - Keep links hardcoded first; migrate to `src/data/*` once content model is defined.
+
+### B. Hero (`src/components/sections/hero-section.tsx`)
+- Continue current pattern: `GlassPanel` + `LayerContent` + background media.
+- Keep copy replaceable and factual; do not hardcode unverified claims.
+- Keep CTA trio consistent with project conversion goals:
+  - Call CTA (`tel:`)
+  - WhatsApp CTA
+  - Quote CTA (anchor to quote section/page)
+- Ensure CTA hrefs are real production values before shipping.
+
+### C. Other homepage sections (`src/components/sections/*`)
+- Build each required homepage block as **one file per section**:
+  - `trust-strip.tsx`
+  - `service-cards-section.tsx`
+  - `why-choose-us-section.tsx`
+  - `how-it-works-section.tsx`
+  - `areas-section.tsx`
+  - `reviews-section.tsx`
+  - `faq-section.tsx`
+  - `final-cta-section.tsx`
+- Each section should:
+  1. Export a single named component.
+  2. Accept small typed props when content varies.
+  3. Use `SectionFrame` for width/padding consistency.
+  4. Use shared CTA components instead of duplicating button markup.
+
+### D. Page assembly (`src/app/**/page.tsx`)
+- Keep route pages thin.
+- Composition pattern:
+  1. Import section components.
+  2. Render sections in conversion order.
+  3. Keep page files mostly declarative (minimal inline logic).
+- For service detail pages:
+  - Reuse shared section primitives and pass service-specific content via typed objects from `src/data/services.ts`.
+
+### E. Footer (`src/components/layout/site-footer.tsx`)
+- Keep footer informational and trust-oriented:
+  - Contact methods
+  - Service area mention (West Midlands only unless verified expansion)
+  - Legal links (`/legal/*`)
+  - Licence/compliance link
+- Keep copy factual and short.
+
+### F. Shared action components (`src/components/shared/*`)
+- `call-button.tsx`, `whatsapp-button.tsx`, and quote UI should be reusable with consistent variants.
+- Recommended props:
+  - `label?: string`
+  - `className?: string`
+  - `size?: "sm" | "md" | "lg"`
+  - destination prop (`phone`, `href`, etc.) kept explicit and typed.
+- Avoid embedding page-specific copy in shared components.
+
+### G. UI primitives (`src/components/ui/*`)
+- Keep these presentation-only and composable.
+- No business rules here.
+- Add primitives only when they are reused by 2+ sections/pages.
+
+### H. Data, types, validation placement
+- `src/data/*`: structured page/service/review/faq content objects.
+- `src/types/index.ts`: shared interfaces/types for service cards, FAQs, reviews, CTA props.
+- `src/lib/*`: helper functions (SEO metadata helpers, formatting utilities, optional validation helpers if forms are added).
+- If quote form is implemented in Phase 1 frontend-only mode:
+  - Validate client-side only.
+  - Keep schema near form logic (or in `src/lib`) and keep submission flow clearly marked as placeholder if backend is absent.
+
+### I. Conventions to preserve
+- App Router route structure.
+- Global token/layer styling model in `globals.css`.
+- Mobile CTA visibility and trust markers near top sections.
+- No invented claims/testimonials/pricing/areas.
+- Prefer simple, predictable, typed component APIs.
