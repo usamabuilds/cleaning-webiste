@@ -1,19 +1,12 @@
-export type CompanyProfile = {
-  brandName: string;
-  logoAlt: string;
-  phoneLabel: string;
-  phoneHref?: string;
-  whatsappLabel: string;
-  whatsappHref?: string;
-  quoteHref: string;
-};
+import type { CompanyProfile } from "@/types";
 
 export const companyProfile: CompanyProfile = {
   brandName: "Crucial Recycling",
-  logoAlt: "Brand logo placeholder",
-  phoneLabel: "Call (add number)",
-  phoneHref: undefined,
-  whatsappLabel: "WhatsApp (add link)",
-  whatsappHref: undefined,
+  logoAlt: "Crucial Recycling logo",
+  phoneNumber: "+440000000000",
+  phoneLabel: "Call now",
+  whatsappNumber: "440000000000",
+  whatsappDefaultMessage: "Hi, I need a rubbish removal quote in the West Midlands.",
+  whatsappLabel: "WhatsApp us",
   quoteHref: "/get-a-quote",
 };

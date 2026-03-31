@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import type { ReactNode } from "react";
-import { Menu, Phone, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
+import { CallButton } from "@/components/shared/call-button";
+import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
 
 const navLinks = [
@@ -15,37 +16,10 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/reviews", label: "Reviews" },
   { href: "/faq", label: "FAQ" },
-  { href: "/get-a-quote", label: "Get a Quote" },
+  { href: companyProfile.quoteHref, label: "Get a Quote" },
 ] as const;
 
-function CtaLink({
-  href,
-  children,
-  className,
-}: {
-  href?: string;
-  children: ReactNode;
-  className: string;
-}) {
-  const disabled = !href;
-
-  return (
-    <a
-      href={href ?? "#"}
-      aria-disabled={disabled}
-      className={`${className} ${disabled ? "cursor-not-allowed opacity-70" : ""}`}
-      onClick={(event) => {
-        if (disabled) {
-          event.preventDefault();
-        }
-      }}
-    >
-      {children}
-    </a>
-  );
-}
-
-export function SiteHeader() {
+export function SiteHeader(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -59,27 +33,25 @@ export function SiteHeader() {
             <span className="truncate text-sm font-semibold text-slate-900 sm:text-base">{companyProfile.brandName}</span>
           </Link>
 
-          <div className="flex items-center gap-2">
-            <CtaLink
-              href={companyProfile.phoneHref}
-              className="inline-flex items-center gap-1 rounded-lg border border-emerald-700/20 bg-emerald-700/10 px-2.5 py-2 text-xs font-semibold text-emerald-900 sm:px-3"
-            >
-              <Phone className="h-3.5 w-3.5" aria-hidden />
-              <span className="hidden sm:inline">{companyProfile.phoneLabel}</span>
-              <span className="sm:hidden">Call</span>
-            </CtaLink>
-
-            <button
-              type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
-              aria-expanded={isMenuOpen}
-              aria-controls="site-nav-panel"
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setIsMenuOpen((open) => !open)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
-            </button>
+          <div className="hidden items-center gap-2 sm:flex">
+            <CallButton
+              phoneNumber={companyProfile.phoneNumber}
+              label={companyProfile.phoneLabel}
+              variant="outline"
+              className="rounded-lg px-3 py-2"
+            />
           </div>
+
+          <button
+            type="button"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
+            aria-expanded={isMenuOpen}
+            aria-controls="site-nav-panel"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+          </button>
         </div>
 
         <div className="mt-2 hidden items-center justify-between gap-4 lg:flex">
@@ -92,16 +64,14 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <CtaLink
-              href={companyProfile.whatsappHref}
-              className="rounded-lg border border-slate-200 px-3 py-2 text-sm font-semibold text-slate-800"
-            >
-              {companyProfile.whatsappLabel}
-            </CtaLink>
-            <Link
-              href={companyProfile.quoteHref}
-              className="rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-800"
-            >
+            <WhatsAppButton
+              number={companyProfile.whatsappNumber}
+              message={companyProfile.whatsappDefaultMessage}
+              label={companyProfile.whatsappLabel}
+              variant="outline"
+              className="rounded-lg px-3 py-2"
+            />
+            <Link href={companyProfile.quoteHref} className="rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-800">
               Get a Quote
             </Link>
           </div>
@@ -125,21 +95,17 @@ export function SiteHeader() {
             </nav>
 
             <div className="mt-3 grid grid-cols-3 gap-2">
-              <CtaLink
-                href={companyProfile.phoneHref}
-                className="rounded-lg border border-slate-300 px-2 py-2 text-center text-xs font-semibold text-slate-800"
-              >
-                Call
-              </CtaLink>
-              <CtaLink
-                href={companyProfile.whatsappHref}
-                className="rounded-lg border border-slate-300 px-2 py-2 text-center text-xs font-semibold text-slate-800"
-              >
-                WhatsApp
-              </CtaLink>
+              <CallButton phoneNumber={companyProfile.phoneNumber} label="Call" variant="outline" className="rounded-lg px-2 py-2 text-xs" />
+              <WhatsAppButton
+                number={companyProfile.whatsappNumber}
+                message={companyProfile.whatsappDefaultMessage}
+                label="WhatsApp"
+                variant="outline"
+                className="rounded-lg px-2 py-2 text-xs"
+              />
               <Link
                 href={companyProfile.quoteHref}
-                className="rounded-lg bg-emerald-700 px-2 py-2 text-center text-xs font-semibold text-white"
+                className="inline-flex items-center justify-center rounded-lg bg-emerald-700 px-2 py-2 text-center text-xs font-semibold text-white"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Quote
