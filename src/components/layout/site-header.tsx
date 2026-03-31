@@ -24,11 +24,11 @@ export function SiteHeader(): JSX.Element {
 
   return (
     <header className="z-sticky sticky top-0 border-b border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="section-frame py-2 sm:py-3">
+      <div className="section-frame py-1.5 sm:py-2">
         <div className="layer-content flex items-center justify-end gap-2 sm:gap-4">
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-controls="site-nav-panel"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -38,7 +38,7 @@ export function SiteHeader(): JSX.Element {
           </button>
         </div>
 
-        <div className="mt-2 hidden items-center justify-between gap-4 lg:flex">
+        <div className="mt-1 hidden items-center justify-between gap-4 lg:flex">
           <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="font-medium text-slate-700 transition-colors hover:text-slate-900">
@@ -53,9 +53,9 @@ export function SiteHeader(): JSX.Element {
               message={companyProfile.whatsappDefaultMessage}
               label={companyProfile.whatsappLabel}
               variant="outline"
-              className="rounded-lg px-3 py-2"
+              className="rounded-lg px-3 py-1.5"
             />
-            <Link href={companyProfile.quoteHref} className="rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-800">
+            <Link href={companyProfile.quoteHref} className="rounded-lg bg-emerald-700 px-3 py-1.5 text-sm font-semibold text-white hover:bg-emerald-800">
               Get a Quote
             </Link>
           </div>
