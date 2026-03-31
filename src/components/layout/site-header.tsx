@@ -25,23 +25,7 @@ export function SiteHeader(): JSX.Element {
   return (
     <header className="z-sticky sticky top-0 border-b border-slate-200/70 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="section-frame py-2 sm:py-3">
-        <div className="layer-content flex items-center justify-between gap-2 sm:gap-4">
-          <Link href="/" className="flex min-w-0 items-center gap-2 rounded-md px-1 py-2 text-left">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-emerald-700/20 bg-emerald-700/10 text-xs font-semibold text-emerald-900">
-              Logo
-            </span>
-            <span className="truncate text-sm font-semibold text-slate-900 sm:text-base">{companyProfile.brandName}</span>
-          </Link>
-
-          <div className="hidden items-center gap-2 sm:flex">
-            <CallButton
-              phoneNumber={companyProfile.phoneNumber}
-              label={companyProfile.phoneLabel}
-              variant="outline"
-              className="rounded-lg px-3 py-2"
-            />
-          </div>
-
+        <div className="layer-content flex items-center justify-end gap-2 sm:gap-4">
           <button
             type="button"
             className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 lg:hidden"
