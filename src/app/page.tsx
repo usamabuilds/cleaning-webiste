@@ -1,6 +1,5 @@
 import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
-import { SiteHeader } from "@/components/layout/site-header";
 import { AreasSection } from "@/components/sections/areas-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
@@ -15,7 +14,6 @@ import { SectionFrame } from "@/components/ui/section-frame";
 export default function Home(): JSX.Element {
   return (
     <>
-      <SiteHeader />
       <main className="space-y-6 pb-24 sm:pb-8">
         <HeroSection />
 
