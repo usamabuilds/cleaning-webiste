@@ -4,8 +4,8 @@ import { GlassPanel } from "@/components/ui/glass-panel";
 
 export function HeroSection(): JSX.Element {
   return (
-    <GlassPanel className="overflow-hidden bg-zinc-900 p-0 backdrop-blur-none">
-      <section className="relative isolate min-h-[420px]">
+    <GlassPanel className="mx-auto w-[calc(100%-var(--frame-padding-x)*2)] max-w-[calc(var(--frame-max-width)-var(--frame-padding-x)*2)] overflow-hidden rounded-2xl bg-zinc-900 p-0 backdrop-blur-none">
+      <section className="relative isolate h-[420px] md:h-[560px]">
         <div className="hero-media-layer absolute inset-0">
           <Image
             src="/hero/hero.png"
