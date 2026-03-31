@@ -65,7 +65,6 @@ export default function Home() {
       <SectionFrame className="flex flex-col gap-6">
         <GlassPanel className="overflow-hidden bg-zinc-900 p-0 backdrop-blur-none">
           <section className="relative isolate min-h-[420px]">
-            <div className="absolute inset-0 bg-zinc-900" />
             <Image
               src="/hero/hero.png"
               alt="Rubbish removal team clearing waste in the West Midlands"
@@ -74,9 +73,9 @@ export default function Home() {
               sizes="100vw"
               className="object-cover object-right md:object-[72%_center]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/85 to-black/35 md:to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 md:to-black/25" />
             <LayerContent className="relative z-10 flex min-h-[420px] items-end px-1 py-6 sm:px-2 sm:py-10">
-              <div className="max-w-2xl rounded-xl bg-black/60 p-4 sm:p-6">
+              <div className="max-w-2xl rounded-xl bg-black/50 p-4 sm:p-6">
                 <p className="text-sm font-semibold uppercase tracking-wide text-emerald-200">Crucial Recycling</p>
                 <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
                   Fast, licensed rubbish removal and house clearance in the West Midlands.
