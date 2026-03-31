@@ -7,6 +7,8 @@ import { GlassPanel } from "@/components/ui/glass-panel";
 import { LayerContent } from "@/components/ui/layer-content";
 import { companyProfile } from "@/data/company";
 
+const heroCtaButtonClassName = "px-5 py-3";
+
 export function HeroSection(): JSX.Element {
   return (
     <GlassPanel className="overflow-hidden bg-zinc-900 p-0 backdrop-blur-none">
@@ -26,25 +28,30 @@ export function HeroSection(): JSX.Element {
           <div className="max-w-2xl rounded-xl bg-black/50 p-4 sm:p-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-200">{companyProfile.brandName}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
-              Fast, licensed rubbish removal and house clearance in the West Midlands.
+              Rubbish removal and house clearance in the West Midlands.
             </h1>
             <p className="mt-3 max-w-2xl text-sm text-zinc-100 sm:text-base">
-              Lean placeholder copy for the main value proposition. Replace with final brand messaging.
+              Clear pricing, quick collection, and straightforward local support.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={companyProfile.quoteHref}
                 className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-center text-sm font-semibold text-white"
               >
-                Get a Quote
+                {companyProfile.primaryCtaLabel}
               </Link>
-              <CallButton phoneNumber={companyProfile.phoneNumber} label="Call Now" variant="ghost" className="px-5 py-3" />
+              <CallButton
+                phoneNumber={companyProfile.phoneNumber}
+                label={companyProfile.phoneLabel}
+                variant="ghost"
+                className={heroCtaButtonClassName}
+              />
               <WhatsAppButton
                 number={companyProfile.whatsappNumber}
                 message={companyProfile.whatsappDefaultMessage}
-                label="WhatsApp Enquiry"
+                label={companyProfile.whatsappLabel}
                 variant="ghost"
-                className="px-5 py-3"
+                className={heroCtaButtonClassName}
               />
             </div>
           </div>
