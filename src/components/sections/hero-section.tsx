@@ -1,6 +1,11 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { CallButton } from "@/components/shared/call-button";
+import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { LayerContent } from "@/components/ui/layer-content";
-import Image from "next/image";
+import { companyProfile } from "@/data/company";
 
 export function HeroSection(): JSX.Element {
   return (
@@ -19,7 +24,7 @@ export function HeroSection(): JSX.Element {
         <div className="hero-overlay-layer absolute inset-0" />
         <LayerContent className="relative z-10 flex min-h-[420px] items-end px-1 py-6 sm:px-2 sm:py-10">
           <div className="max-w-2xl rounded-xl bg-black/50 p-4 sm:p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-200">Crucial Recycling</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-emerald-200">{companyProfile.brandName}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl">
               Fast, licensed rubbish removal and house clearance in the West Midlands.
             </h1>
@@ -27,18 +32,20 @@ export function HeroSection(): JSX.Element {
               Lean placeholder copy for the main value proposition. Replace with final brand messaging.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <a href="#get-quote" className="rounded-xl bg-emerald-600 px-5 py-3 text-center text-sm font-semibold text-white">
-                Get a Quote
-              </a>
-              <a
-                href="tel:+440000000000"
-                className="rounded-xl border border-zinc-200/70 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white"
+              <Link
+                href={companyProfile.quoteHref}
+                className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-center text-sm font-semibold text-white"
               >
-                Call Now
-              </a>
-              <a href="#" className="rounded-xl border border-zinc-200/70 bg-white/10 px-5 py-3 text-center text-sm font-semibold text-white">
-                WhatsApp Enquiry
-              </a>
+                Get a Quote
+              </Link>
+              <CallButton phoneNumber={companyProfile.phoneNumber} label="Call Now" variant="ghost" className="px-5 py-3" />
+              <WhatsAppButton
+                number={companyProfile.whatsappNumber}
+                message={companyProfile.whatsappDefaultMessage}
+                label="WhatsApp Enquiry"
+                variant="ghost"
+                className="px-5 py-3"
+              />
             </div>
           </div>
         </LayerContent>
