@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
+import { SiteHeader } from "@/components/layout/site-header";
 import { companyProfile } from "@/data/company";
 import { buildRouteMetadata } from "@/lib/seo";
 import { ROUTES } from "@/lib/site";
@@ -47,7 +48,10 @@ export default function RootLayout({
         <div className="app-shell relative min-h-full">
           <div className="z-base pointer-events-none absolute inset-0" aria-hidden />
           <div className="z-panel pointer-events-none absolute inset-0" aria-hidden />
-          <div className="z-content relative min-h-full">{children}</div>
+          <div className="z-content relative min-h-full">
+            <SiteHeader />
+            {children}
+          </div>
         </div>
       </body>
     </html>
