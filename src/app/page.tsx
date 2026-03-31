@@ -1,3 +1,7 @@
+import { GlassPanel } from "@/components/ui/glass-panel";
+import { LayerContent } from "@/components/ui/layer-content";
+import { SectionFrame } from "@/components/ui/section-frame";
+
 export default function Home() {
   const coreServices = [
     {
@@ -56,10 +60,10 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-stone-50 text-zinc-900">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-6 sm:px-6 lg:px-8">
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+    <main className="layer-base text-zinc-900">
+      <SectionFrame className="flex flex-col gap-6">
+        <GlassPanel>
+          <LayerContent>
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">Crucial Recycling</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight sm:text-4xl">
               Fast, licensed rubbish removal and house clearance in the West Midlands.
@@ -78,8 +82,8 @@ export default function Home() {
                 WhatsApp Enquiry
               </a>
             </div>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
         <section className="rounded-2xl bg-emerald-900 p-4 text-sm text-emerald-50 sm:p-5">
           <ul className="grid gap-2 sm:grid-cols-3">
@@ -89,8 +93,8 @@ export default function Home() {
           </ul>
         </section>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">Core services</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {coreServices.map((service) => (
@@ -100,11 +104,11 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">Why choose us</h2>
             <ul className="mt-4 space-y-2 text-sm text-zinc-700">
               {reasons.map((item) => (
@@ -113,11 +117,11 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">How it works</h2>
             <div className="mt-4 grid gap-4 sm:grid-cols-3">
               {steps.map((step) => (
@@ -127,29 +131,29 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">Areas served</h2>
             <p className="mt-3 text-sm text-zinc-700">
               West Midlands coverage. Placeholder: list confirmed towns/areas when available.
             </p>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">Reviews</h2>
             <p className="mt-3 text-sm text-zinc-700">
               Placeholder: add real customer reviews only after they are approved for publishing.
             </p>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
-        <section className="layer-glass rounded-2xl p-6 sm:p-8">
-          <div className="layer-content">
+        <GlassPanel>
+          <LayerContent>
             <h2 className="text-2xl font-bold">FAQ</h2>
             <div className="mt-4 space-y-3">
               {faqs.map((faq) => (
@@ -159,8 +163,8 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </LayerContent>
+        </GlassPanel>
 
         {/* Deliberate high-contrast conversion section to keep final CTA hierarchy explicit. */}
         <section id="get-quote" className="rounded-2xl bg-zinc-900 p-6 text-zinc-100 shadow-sm sm:p-8">
@@ -178,7 +182,7 @@ export default function Home() {
             </a>
           </div>
         </section>
-      </div>
+      </SectionFrame>
     </main>
   );
 }

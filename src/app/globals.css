@@ -20,6 +20,12 @@
   --layer-content-text-muted: #475569;
   --layer-content-heading: #020617;
   --layer-content-inverse: #f8fafc;
+
+  /* Layout primitive tokens */
+  --frame-max-width: 72rem;
+  --frame-padding-x: 1rem;
+  --frame-padding-y: 1.5rem;
+  --frame-radius: 1rem;
 }
 
 @theme inline {
@@ -77,6 +83,14 @@ body {
   color: var(--layer-base-text);
 }
 
+.section-frame {
+  width: 100%;
+  max-width: var(--frame-max-width);
+  margin-inline: auto;
+  padding-inline: var(--frame-padding-x);
+  padding-block: var(--frame-padding-y);
+}
+
 .layer-glass {
   background-color: var(--layer-glass-fill);
   border: 1px solid var(--layer-glass-border);
@@ -102,6 +116,11 @@ body {
   color: var(--layer-content-text);
 }
 
+.layer-content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
 .layer-content :where(h1, h2, h3, h4, h5, h6, strong) {
   color: var(--layer-content-heading);
 }
@@ -113,6 +132,8 @@ body {
 .glass-readable {
   color: var(--layer-content-text);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .glass-media {
@@ -131,6 +152,7 @@ body {
     --layer-glass-shadow-short: 0 4px 10px rgba(17, 24, 39, 0.08);
     --layer-glass-shadow-ambient: 0 10px 20px rgba(17, 24, 39, 0.05);
     --layer-glass-blur: blur(1.5px);
+    --frame-padding-y: 1rem;
   }
 
   .layer-content {
@@ -170,6 +192,19 @@ body {
   main > div > section:nth-child(2),
   main > div > section:last-child {
     scroll-margin-top: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --frame-padding-x: 1.5rem;
+    --frame-radius: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --frame-padding-x: 2rem;
   }
 }
 
