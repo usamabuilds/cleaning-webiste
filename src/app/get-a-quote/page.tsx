@@ -1,27 +1,37 @@
-import { CallButton } from "@/components/shared/call-button";
+import { CtaRow, IntroBlock } from "@/components/shared/page-template";
 import { QuoteForm } from "@/components/shared/quote-form";
-import { WhatsAppButton } from "@/components/shared/whatsapp-button";
-import { companyProfile } from "@/data/company";
 
 export default function GetAQuotePage(): JSX.Element {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
-      <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-8">
-        <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">Get a quote</p>
-        <h1 className="mt-2 text-3xl font-bold text-slate-900">Send your waste removal details</h1>
-        <p className="mt-2 max-w-2xl text-sm text-slate-600">Use the form below or contact us directly for a faster response.</p>
-        <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-          <CallButton phoneNumber={companyProfile.phoneNumber} label={companyProfile.phoneLabel} variant="outline" />
-          <WhatsAppButton
-            number={companyProfile.whatsappNumber}
-            message={companyProfile.whatsappDefaultMessage}
-            label={companyProfile.whatsappLabel}
-            variant="outline"
-          />
-        </div>
-      </section>
+      <IntroBlock
+        eyebrow="Get a quote"
+        title="Request a rubbish removal quote in the West Midlands"
+        description="Send your job details and photos for a faster estimate. We handle domestic and commercial jobs with separate scope planning."
+      />
+
+      <CtaRow label="Need help before filling the form?" />
 
       <QuoteForm />
+
+      <section className="grid gap-4 md:grid-cols-2">
+        <article className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+          <h2 className="text-xl font-bold text-slate-900">What to include</h2>
+          <ul className="mt-3 space-y-2 text-sm text-slate-700">
+            <li>Postcode and property type</li>
+            <li>Photo(s) of the waste volume</li>
+            <li>Any access notes such as stairs or parking limits</li>
+          </ul>
+        </article>
+        <article className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
+          <h2 className="text-xl font-bold text-slate-900">Domestic vs commercial quotes</h2>
+          <p className="mt-2 text-sm text-slate-600">
+            Please specify whether your request is household or business related so we can quote with the right collection and compliance details.
+          </p>
+        </article>
+      </section>
+
+      <CtaRow label="Ready to send details now?" />
     </main>
   );
 }
