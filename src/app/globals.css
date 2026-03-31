@@ -2,7 +2,24 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111827;
+
+  /* Base layer tokens */
+  --layer-base-bg: #ffffff;
+  --layer-base-text: #111827;
+
+  /* Glass layer tokens (non-frosted, low-blur, depth-first) */
+  --layer-glass-fill: rgba(255, 255, 255, 0.72);
+  --layer-glass-border: rgba(255, 255, 255, 0.7);
+  --layer-glass-shadow-short: 0 8px 18px rgba(17, 24, 39, 0.1);
+  --layer-glass-shadow-ambient: 0 24px 44px rgba(17, 24, 39, 0.08);
+  --layer-glass-blur: blur(4px);
+
+  /* Content layer tokens */
+  --layer-content-text: #0f172a;
+  --layer-content-text-muted: #475569;
+  --layer-content-heading: #020617;
+  --layer-content-inverse: #f8fafc;
 }
 
 @theme inline {
@@ -12,15 +29,48 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--layer-base-bg);
+  color: var(--layer-base-text);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.layer-base {
+  background-color: var(--layer-base-bg);
+  color: var(--layer-base-text);
+}
+
+.layer-glass {
+  background-color: var(--layer-glass-fill);
+  border: 1px solid var(--layer-glass-border);
+  border-top-color: rgba(255, 255, 255, 0.85);
+  border-left-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--layer-glass-shadow-short), var(--layer-glass-shadow-ambient);
+  backdrop-filter: var(--layer-glass-blur);
+  -webkit-backdrop-filter: var(--layer-glass-blur);
+}
+
+.layer-content {
+  color: var(--layer-content-text);
+}
+
+.layer-content :where(h1, h2, h3, h4, h5, h6, strong) {
+  color: var(--layer-content-heading);
+}
+
+.layer-content :where(p, li, small, span, label) {
+  color: var(--layer-content-text-muted);
+}
+
+.glass-readable {
+  color: var(--layer-content-text);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.glass-media {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  filter: contrast(1.02) saturate(0.98);
 }
