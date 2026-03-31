@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
-import { SiteHeader } from "@/components/layout/site-header";
-
 import "./globals.css";
 
 const geistSans = Geist({
@@ -32,11 +29,7 @@ export default function RootLayout({
         <div className="app-shell relative min-h-full">
           <div className="z-base pointer-events-none absolute inset-0" aria-hidden />
           <div className="z-panel pointer-events-none absolute inset-0" aria-hidden />
-          <div className="z-content relative min-h-full">
-            <SiteHeader />
-            {children}
-            <MobileStickyCta />
-          </div>
+          <div className="z-content relative min-h-full">{children}</div>
         </div>
       </body>
     </html>
