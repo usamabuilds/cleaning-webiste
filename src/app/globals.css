@@ -144,6 +144,22 @@ body {
   filter: none;
 }
 
+.hero-media-layer {
+  opacity: 0.96;
+}
+
+.hero-overlay-layer {
+  /* Do not exceed opacity threshold; hero image must remain legible/visible. */
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.4) 52%, rgba(0, 0, 0, 0.25) 100%);
+  opacity: 0.72;
+}
+
+@media (min-width: 768px) {
+  .hero-overlay-layer {
+    opacity: 0.64;
+  }
+}
+
 @media (max-width: 639px) {
   :root {
     /* Reduce visual complexity on mobile while preserving depth separation. */
