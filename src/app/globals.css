@@ -35,6 +35,37 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  .z-base {
+    z-index: 0;
+  }
+
+  .z-panel {
+    z-index: 10;
+  }
+
+  .z-content {
+    z-index: 20;
+  }
+
+  .z-sticky {
+    z-index: 40;
+  }
+
+  .z-persistent {
+    z-index: 50;
+  }
+
+  .z-overlay {
+    z-index: 60;
+  }
+
+  .panel-pseudo-safe::before,
+  .panel-pseudo-safe::after {
+    pointer-events: none;
+  }
+}
+
 .layer-base {
   background-color: var(--layer-base-bg);
   color: var(--layer-base-text);
