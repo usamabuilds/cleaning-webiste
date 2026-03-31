@@ -28,10 +28,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="layer-base min-h-full">
-        <div className="app-shell relative isolate min-h-full">
-          <div className="pointer-events-none absolute inset-0 z-0" aria-hidden />
-          <div className="pointer-events-none absolute inset-0 z-10" aria-hidden />
-          <div className="relative z-20 min-h-full">{children}</div>
+        <div className="app-shell relative min-h-full">
+          <div className="z-base pointer-events-none absolute inset-0" aria-hidden />
+          <div className="z-panel pointer-events-none absolute inset-0" aria-hidden />
+          <div className="z-content relative min-h-full">{children}</div>
         </div>
       </body>
     </html>
