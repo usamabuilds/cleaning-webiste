@@ -11,42 +11,40 @@ import { SectionFrame } from "@/components/ui/section-frame";
 
 export default function Home(): JSX.Element {
   return (
-    <>
-      <main className="space-y-6 pb-24 sm:pb-8">
-        <HeroSection />
+    <main className="space-y-6 pb-24 sm:pb-8">
+      <HeroSection />
 
-        <SectionFrame>
-          <TrustStrip />
-        </SectionFrame>
+      <SectionFrame>
+        <TrustStrip />
+      </SectionFrame>
 
-        <SectionFrame>
-          <ServiceCardsSection />
-        </SectionFrame>
+      <SectionFrame>
+        <ServiceCardsSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <WhyChooseUsSection />
-        </SectionFrame>
+      <SectionFrame>
+        <WhyChooseUsSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <HowItWorksSection />
-        </SectionFrame>
+      <SectionFrame>
+        <HowItWorksSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <AreasSection />
-        </SectionFrame>
+      <SectionFrame>
+        <AreasSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <ReviewsSection />
-        </SectionFrame>
+      <SectionFrame>
+        <ReviewsSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <FaqSection />
-        </SectionFrame>
+      <SectionFrame>
+        <FaqSection />
+      </SectionFrame>
 
-        <SectionFrame>
-          <FinalCtaSection />
-        </SectionFrame>
-      </main>
-    </>
+      <SectionFrame>
+        <FinalCtaSection />
+      </SectionFrame>
+    </main>
   );
 }
