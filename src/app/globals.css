@@ -13,7 +13,7 @@
   --layer-glass-border: rgba(255, 255, 255, 0.7);
   --layer-glass-shadow-short: 0 8px 18px rgba(17, 24, 39, 0.1);
   --layer-glass-shadow-ambient: 0 24px 44px rgba(17, 24, 39, 0.08);
-  --layer-glass-blur: blur(4px);
+  --layer-glass-blur: blur(2px);
 
   /* Content layer tokens */
   --layer-content-text: #0f172a;
@@ -36,6 +36,12 @@ body {
 }
 
 @layer utilities {
+  /*
+    Panel variant guardrails
+    Allowed: .layer-glass (single shell) + one inner content wrapper (e.g. .layer-content).
+    Allowed: .layer-base for fully opaque sections.
+    Disallowed: nested .layer-glass inside .layer-glass, blur/filter animation, and stacked translucent wrappers.
+  */
   .z-base {
     z-index: 0;
   }
@@ -79,6 +85,17 @@ body {
   box-shadow: var(--layer-glass-shadow-short), var(--layer-glass-shadow-ambient);
   backdrop-filter: var(--layer-glass-blur);
   -webkit-backdrop-filter: var(--layer-glass-blur);
+  transition-property: background-color, border-color, color, opacity, transform;
+  transition-duration: 180ms;
+  transition-timing-function: ease-out;
+}
+
+.layer-glass .layer-glass {
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .layer-content {
@@ -103,7 +120,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.48);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
   overflow: hidden;
-  filter: contrast(1.02) saturate(0.98);
+  filter: none;
 }
 
 @media (max-width: 639px) {
@@ -153,5 +170,41 @@ body {
   main > div > section:nth-child(2),
   main > div > section:last-child {
     scroll-margin-top: 1rem;
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .layer-glass,
+  .glass-media {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  :root {
+    --layer-glass-fill: #ffffff;
+    --layer-glass-border: rgba(15, 23, 42, 0.16);
+    --layer-glass-shadow-short: 0 4px 10px rgba(17, 24, 39, 0.08);
+    --layer-glass-shadow-ambient: 0 8px 20px rgba(17, 24, 39, 0.05);
+    --layer-glass-blur: blur(0);
+  }
+
+  .layer-glass,
+  .glass-media {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    filter: none;
   }
 }
