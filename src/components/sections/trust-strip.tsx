@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type FocusEvent } from "react";
+import { useEffect, useMemo, useState, type FocusEvent } from "react";
 
 import { trustMarkerItems } from "@/data/company";
 import type { TrustMarkerItem } from "@/data/company";
@@ -27,7 +27,7 @@ export function TrustStrip(): JSX.Element {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const trackRef = useRef<HTMLUListElement>(null);
+
   const shouldAutoRotate = useMemo(
     () => !isPaused && !prefersReducedMotion && trustMarkerItems.length > 1,
     [isPaused, prefersReducedMotion],
@@ -61,24 +61,6 @@ export function TrustStrip(): JSX.Element {
     };
   }, [activeIndex, shouldAutoRotate]);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) {
-      return;
-    }
-
-    const activeItem = track.children[activeIndex] as HTMLElement | undefined;
-    if (!activeItem) {
-      return;
-    }
-
-    activeItem.scrollIntoView({
-      behavior: prefersReducedMotion ? "auto" : "smooth",
-      block: "nearest",
-      inline: "center",
-    });
-  }, [activeIndex, prefersReducedMotion]);
-
   const handleFocusWithin = (): void => {
     setIsPaused(true);
   };
@@ -93,16 +75,15 @@ export function TrustStrip(): JSX.Element {
     <section
       id="trust"
       aria-label="Trust markers"
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-1.5 sm:px-4"
+      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-2 sm:px-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={handleFocusWithin}
       onBlurCapture={handleBlurWithin}
     >
       <ul
-        ref={trackRef}
         aria-label="Credibility highlights"
-        className="flex snap-x snap-mandatory touch-pan-x flex-nowrap items-center gap-2 overflow-x-auto px-0.5 text-xs font-medium text-slate-700"
+        className="relative h-10"
       >
         {trustMarkerItems.map((marker, index) => {
           const Icon = trustMarkerIcons[marker.iconKey];
@@ -125,18 +106,22 @@ export function TrustStrip(): JSX.Element {
           return (
             <li
               key={marker.id}
-              className={`shrink-0 snap-center rounded-lg border px-2.5 py-1.5 transition-all duration-300 ${
+              className={`absolute inset-0 flex items-center justify-center rounded-lg border px-3 transition-opacity duration-300 ${
                 isActive
-                  ? "border-slate-300 bg-slate-100 text-slate-900"
-                  : "border-slate-200 bg-slate-50/80 text-slate-700"
+                  ? "border-slate-300 bg-slate-100 text-slate-900 opacity-100"
+                  : "pointer-events-none border-slate-200 bg-slate-50/80 text-slate-700 opacity-0"
               }`}
               aria-current={isActive ? "true" : undefined}
+              aria-hidden={!isActive}
             >
-              <span className="inline-flex max-w-[14rem] items-start gap-1.5">
-                <Icon size={12} className="mt-0.5 shrink-0 text-slate-500" aria-hidden="true" />
-                <span className="leading-tight">
-                  <span className="block truncate text-slate-800">{label}</span>
-                  <span className="block truncate text-[11px] font-normal text-slate-600">{detail}</span>
+              <span className="inline-flex max-w-full items-center gap-2 overflow-hidden text-xs font-medium text-slate-700 sm:text-sm">
+                <Icon size={14} className="shrink-0 text-slate-500" aria-hidden="true" />
+                <span className="truncate whitespace-nowrap leading-none text-slate-800">
+                  {label}
+                  <span className="mx-1.5 text-slate-400" aria-hidden="true">
+                    •
+                  </span>
+                  <span className="font-normal text-slate-600">{detail}</span>
                 </span>
               </span>
             </li>
