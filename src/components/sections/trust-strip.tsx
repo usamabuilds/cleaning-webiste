@@ -20,7 +20,10 @@ const trustMarkerIcons: Record<TrustMarkerItem["iconKey"], LucideIcon> = {
 export function TrustStrip(): JSX.Element {
   return (
     <section id="trust" aria-label="Trust markers" className="rounded-xl border border-slate-200 bg-white px-3 py-2 sm:px-4">
-      <ul className="flex snap-x snap-mandatory gap-2 overflow-x-auto text-xs font-medium text-slate-700 sm:text-sm md:flex-wrap md:overflow-visible md:snap-none">
+      <ul
+        aria-label="Credibility highlights"
+        className="flex snap-x snap-mandatory gap-2 overflow-x-auto px-0.5 text-xs font-medium text-slate-700 [scrollbar-width:thin] [scroll-padding-inline:0.75rem] sm:text-sm sm:[scroll-padding-inline:1rem] md:flex-wrap md:overflow-visible md:px-0 md:snap-none"
+      >
         {trustMarkerItems.map((marker) => {
           const Icon = trustMarkerIcons[marker.iconKey];
           const detail = marker.isPlaceholder ? "Proof pending confirmation." : marker.detail;
@@ -28,7 +31,7 @@ export function TrustStrip(): JSX.Element {
           return (
             <li
               key={marker.id}
-              className="shrink-0 snap-start rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
+              className="min-h-11 shrink-0 snap-start rounded-lg border border-slate-200 bg-slate-50 px-3 py-2"
             >
               <span className="inline-flex items-start gap-1.5">
                 <Icon size={14} className="text-slate-500" aria-hidden="true" />
