@@ -247,3 +247,23 @@ body {
     filter: none;
   }
 }
+
+@keyframes trust-ribbon-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.trust-ribbon-track {
+  animation: trust-ribbon-scroll 24s linear infinite;
+  will-change: transform;
+}
+
+.trust-ribbon-track:hover,
+.trust-ribbon-track:focus-within {
+  animation-play-state: paused;
+}
