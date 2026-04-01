@@ -23,6 +23,7 @@ export type NavItem = {
   href: RoutePath;
 };
 
+// Single source of truth for internal route links used across site navigation.
 export const primaryNavigation: ReadonlyArray<NavItem> = [
   { label: "Home", href: ROUTES.home },
   { label: "Services", href: ROUTES.services },
@@ -45,5 +46,20 @@ export const serviceNavigation: ReadonlyArray<NavItem> = [
 export const legalNavigation: ReadonlyArray<NavItem> = [
   { label: "Privacy Policy", href: ROUTES.privacyPolicy },
   { label: "Terms", href: ROUTES.terms },
-  { label: "Licence & Compliance", href: ROUTES.licenceCompliance },
+  { label: "Licence Compliance", href: ROUTES.licenceCompliance },
+];
+
+export const footerQuickNavigation: ReadonlyArray<NavItem> = [
+  { label: "Home", href: ROUTES.home },
+  { label: "Services", href: ROUTES.services },
+  { label: "House Clearance", href: ROUTES.houseClearance },
+  { label: "Bulky Waste & Furniture", href: ROUTES.bulkyWasteFurnitureCollection },
+  { label: "Garden, Shed & Garage", href: ROUTES.gardenShedGarageClearance },
+  { label: "Commercial Waste", href: ROUTES.commercialWasteCardboardCollection },
+  { label: "How It Works", href: ROUTES.howItWorks },
+  { label: "Areas Served", href: ROUTES.areasServed },
+  { label: "About", href: ROUTES.about },
+  { label: "Reviews", href: ROUTES.reviews },
+  { label: "FAQ", href: ROUTES.faq },
+  { label: "Get a Quote", href: ROUTES.getAQuote },
 ];
