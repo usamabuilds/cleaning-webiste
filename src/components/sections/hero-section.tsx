@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-import { GlassPanel } from "@/components/ui/glass-panel";
+import { SectionFrame } from "@/components/ui/section-frame";
 
 export function HeroSection(): JSX.Element {
   return (
-    <GlassPanel className="mx-auto w-[calc(100%-var(--frame-padding-x)*2)] max-w-[calc(var(--frame-max-width)-var(--frame-padding-x)*2)] overflow-hidden rounded-2xl bg-zinc-900 p-0 backdrop-blur-none">
+    <SectionFrame className="overflow-hidden rounded-2xl">
       <section className="relative isolate h-[420px] md:h-[560px]">
         <div className="hero-media-layer absolute inset-0">
           <Image
@@ -17,6 +17,6 @@ export function HeroSection(): JSX.Element {
           />
         </div>
       </section>
-    </GlassPanel>
+    </SectionFrame>
   );
 }
