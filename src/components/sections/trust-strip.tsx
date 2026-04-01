@@ -93,7 +93,7 @@ export function TrustStrip(): JSX.Element {
     <section
       id="trust"
       aria-label="Trust markers"
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-2 sm:px-4"
+      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-1.5 sm:px-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={handleFocusWithin}
@@ -102,7 +102,7 @@ export function TrustStrip(): JSX.Element {
       <ul
         ref={trackRef}
         aria-label="Credibility highlights"
-        className="flex snap-x snap-mandatory touch-pan-x flex-nowrap items-center gap-2 overflow-x-auto px-0.5 text-xs font-medium text-slate-700 sm:text-sm"
+        className="flex snap-x snap-mandatory touch-pan-x flex-nowrap items-center gap-2 overflow-x-auto px-0.5 text-xs font-medium text-slate-700"
       >
         {trustMarkerItems.map((marker, index) => {
           const Icon = trustMarkerIcons[marker.iconKey];
@@ -125,18 +125,18 @@ export function TrustStrip(): JSX.Element {
           return (
             <li
               key={marker.id}
-              className={`h-14 shrink-0 snap-center rounded-lg border px-3 py-2 transition-all duration-300 ${
+              className={`shrink-0 snap-center rounded-lg border px-2.5 py-1.5 transition-all duration-300 ${
                 isActive
                   ? "border-slate-300 bg-slate-100 text-slate-900"
                   : "border-slate-200 bg-slate-50/80 text-slate-700"
               }`}
               aria-current={isActive ? "true" : undefined}
             >
-              <span className="inline-flex items-start gap-1.5">
-                <Icon size={14} className="text-slate-500" aria-hidden="true" />
+              <span className="inline-flex max-w-[14rem] items-start gap-1.5">
+                <Icon size={12} className="mt-0.5 shrink-0 text-slate-500" aria-hidden="true" />
                 <span className="leading-tight">
-                  <span className="block text-slate-800">{label}</span>
-                  <span className="block text-[11px] font-normal text-slate-600 sm:text-xs">{detail}</span>
+                  <span className="block truncate text-slate-800">{label}</span>
+                  <span className="block truncate text-[11px] font-normal text-slate-600">{detail}</span>
                 </span>
               </span>
             </li>
