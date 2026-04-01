@@ -21,6 +21,7 @@ export type HomeCredibilityItem = {
 export type TrustMarkerItem = {
   id: string;
   text: string;
+  iconKey: "licence-compliance" | "map-coverage" | "clock-availability" | "stars-reviews" | "labour-service-inclusion";
 };
 
 export const companyProfile: CompanyDetails = {
@@ -84,13 +85,26 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
   {
     id: "licensed-waste-carrier",
     text: "Licensed waste carrier",
+    iconKey: "licence-compliance",
   },
   {
-    id: "fast-local-response",
-    text: `Fast local response across the ${companyProfile.serviceRegion}`,
+    id: "west-midlands-coverage",
+    text: `Coverage across the ${companyProfile.serviceRegion}`,
+    iconKey: "map-coverage",
   },
   {
-    id: "recycling-first-approach",
-    text: "Eco-friendly, recycling-first disposal",
+    id: "flexible-availability",
+    text: "Flexible collection availability",
+    iconKey: "clock-availability",
+  },
+  {
+    id: "customer-reviews",
+    text: "Customer reviews available",
+    iconKey: "stars-reviews",
+  },
+  {
+    id: "labour-included",
+    text: "Labour and loading included",
+    iconKey: "labour-service-inclusion",
   },
 ];
