@@ -320,12 +320,14 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .trust-ribbon-track {
-    animation: none;
-    transform: translate3d(0, 0, 0);
+    animation-name: trust-ribbon-scroll !important;
+    animation-duration: 48s !important;
+    animation-timing-function: linear !important;
+    animation-iteration-count: infinite !important;
   }
 
   .trust-ribbon-set-clone {
-    display: none;
+    display: flex;
   }
 }
 
