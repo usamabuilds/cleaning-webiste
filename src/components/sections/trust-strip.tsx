@@ -113,7 +113,7 @@ export function TrustStrip(): JSX.Element {
     <section
       id="trust"
       aria-label="Trust markers"
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-2 sm:px-4"
+      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-1.5 sm:px-4 sm:py-2"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onFocusCapture={handleFocusWithin}
