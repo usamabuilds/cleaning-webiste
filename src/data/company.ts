@@ -18,6 +18,11 @@ export type HomeCredibilityItem = {
   href?: string;
 };
 
+export type TrustMarkerItem = {
+  id: string;
+  text: string;
+};
+
 export const companyProfile: CompanyDetails = {
   brandName: "Crucial Recycling",
   logoAlt: "Crucial Recycling logo",
@@ -72,5 +77,20 @@ export const homeCredibilityItems: ReadonlyArray<HomeCredibilityItem> = [
     detail: "Team loading and lifting included where applicable.",
     iconKey: "users",
     isPlaceholder: false,
+  },
+];
+
+export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
+  {
+    id: "licensed-waste-carrier",
+    text: "Licensed waste carrier",
+  },
+  {
+    id: "fast-local-response",
+    text: `Fast local response across the ${companyProfile.serviceRegion}`,
+  },
+  {
+    id: "recycling-first-approach",
+    text: "Eco-friendly, recycling-first disposal",
   },
 ];
