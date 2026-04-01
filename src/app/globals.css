@@ -250,20 +250,35 @@ body {
 
 @keyframes trust-ribbon-scroll {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
+}
+
+.trust-ribbon-viewport {
+  overflow: hidden;
 }
 
 .trust-ribbon-track {
   display: flex;
   width: max-content;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 0.75rem;
-  animation: trust-ribbon-scroll 36s linear infinite;
+  animation: trust-ribbon-scroll 40s linear infinite;
   will-change: transform;
+}
+
+.trust-ribbon-set {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.75rem;
+  white-space: nowrap;
 }
 
 .trust-chip {
@@ -296,7 +311,8 @@ body {
 }
 
 @media (max-width: 639px) {
-  .trust-ribbon-track {
+  .trust-ribbon-track,
+  .trust-ribbon-set {
     gap: 0.625rem;
   }
 
@@ -310,13 +326,11 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .trust-ribbon-track {
     animation: none;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    transform: translate3d(0, 0, 0);
   }
 
-  .trust-ribbon-track > li {
-    flex: 1 1 16rem;
+  .trust-ribbon-set-clone {
+    display: none;
   }
 }
 
