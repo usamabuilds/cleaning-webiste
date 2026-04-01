@@ -1,4 +1,5 @@
 import { CalendarCheck2, Camera, Truck, WalletCards } from "lucide-react";
+import Image from "next/image";
 
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
@@ -57,7 +58,18 @@ export function HowItWorksSection(): JSX.Element {
         ))}
       </ol>
 
-      <div className="mt-6">
+      <figure className="mx-auto mt-8 max-w-4xl overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-2 sm:p-3">
+        <Image
+          src="/howitworks.png"
+          alt="How our waste collection process works from quote to collection"
+          width={1400}
+          height={900}
+          className="h-auto w-full rounded-xl object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1200px) 90vw, 1000px"
+        />
+      </figure>
+
+      <div className="mt-8">
         <WhatsAppButton
           number={companyProfile.whatsappNumber}
           message="Hi, I need a fast quote and can send photos of the waste."
