@@ -14,7 +14,7 @@ export default function Home(): JSX.Element {
     <main className="space-y-6 pb-24 sm:pb-8">
       <HeroSection />
 
-      <SectionFrame>
+      <SectionFrame className="-mt-2 sm:mt-0">
         <TrustStrip />
       </SectionFrame>
 
