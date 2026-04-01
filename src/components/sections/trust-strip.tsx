@@ -106,7 +106,20 @@ export function TrustStrip(): JSX.Element {
       >
         {trustMarkerItems.map((marker, index) => {
           const Icon = trustMarkerIcons[marker.iconKey];
-          const detail = marker.isPlaceholder ? "Proof pending confirmation." : marker.detail;
+          const label = marker.isPlaceholder
+            ? marker.iconKey === "clock-availability"
+              ? "Collection availability"
+              : marker.iconKey === "stars-reviews"
+                ? "Review proof"
+                : marker.iconKey === "licence-compliance"
+                  ? "Compliance details"
+                  : marker.label
+            : marker.label;
+          const detail = marker.isPlaceholder
+            ? marker.iconKey === "clock-availability"
+              ? "Availability details pending confirmation."
+              : "Proof pending confirmation."
+            : marker.detail;
           const isActive = index === activeIndex;
 
           return (
@@ -122,7 +135,7 @@ export function TrustStrip(): JSX.Element {
               <span className="inline-flex items-start gap-1.5">
                 <Icon size={14} className="text-slate-500" aria-hidden="true" />
                 <span className="leading-tight">
-                  <span className="block text-slate-800">{marker.label}</span>
+                  <span className="block text-slate-800">{label}</span>
                   <span className="block text-[11px] font-normal text-slate-600 sm:text-xs">{detail}</span>
                 </span>
               </span>
