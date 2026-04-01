@@ -8,7 +8,7 @@ export function HeroSection(): JSX.Element {
       <section className="relative isolate h-[420px] md:h-[560px]">
         <div className="hero-media-layer absolute inset-0">
           <Image
-            src="/hero/hero.png"
+            src="/hero/hero.webp"
             alt="Rubbish removal team clearing waste in the West Midlands"
             fill
             priority
