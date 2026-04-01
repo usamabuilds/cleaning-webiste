@@ -17,7 +17,7 @@ Scope: audited all git-tracked repository files (`git ls-files`), all Markdown f
 - `src/components/sections/**`: intended homepage/page sections. Only `hero-section.tsx` implemented; all other section files exist but are empty.
 - `src/components/layout/**` + `src/components/shared/**`: intended layout chrome and shared CTA/form controls; all files are empty.
 - `src/data/**`, `src/lib/**`, `src/types/**`: planned data/config/helper/type layers; currently empty files.
-- `public/`: static assets. `hero/hero.png` is used by hero section. Several SVG files are currently 0-byte placeholders.
+- `public/`: static assets. `hero/hero.webp` is used by hero section. Several SVG files are currently 0-byte placeholders.
 - Root config (`next.config.ts`, `tsconfig.json`, `eslint.config.mjs`, `postcss.config.mjs`, `package.json`) defines a strict TypeScript Next.js 16 + Tailwind 4 toolchain.
 
 Overall structure is **frontend feature-sliced by route/section intent**, but implementation is still partial.
@@ -60,7 +60,7 @@ Overall structure is **frontend feature-sliced by route/section intent**, but im
 
 ### Hero section rendering flow (implemented, but not wired to home)
 1. `HeroSection` composes `GlassPanel` + `LayerContent` wrappers.
-2. `next/image` serves `/public/hero/hero.png`.
+2. `next/image` serves `/public/hero/hero.webp`.
 3. CTA anchors render hardcoded `Get a Quote`, `Call Now`, `WhatsApp Enquiry` links.
 
 ### Data and form flows
@@ -145,4 +145,3 @@ Patterns *not present yet*: service layer, DTO validation, adapters, repositorie
 - Replace placeholders early (metadata, phone/WhatsApp hrefs, README) to prevent production leakage.
 - If forms are added, centralize validation in `src/lib/*` and types in `src/types/*` to preserve separation.
 - Avoid introducing backend/API complexity until project rules change; current architecture is static-first.
-
