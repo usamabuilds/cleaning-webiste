@@ -267,8 +267,8 @@ body {
   width: max-content;
   flex-wrap: nowrap;
   align-items: center;
-  gap: 0.75rem;
-  animation: trust-ribbon-scroll 40s linear infinite;
+  gap: 0;
+  animation: trust-ribbon-scroll 48s linear infinite;
   will-change: transform;
 }
 
@@ -303,11 +303,6 @@ body {
 
 .trust-chip-detail {
   color: rgb(51 65 85);
-}
-
-.trust-ribbon-track:hover,
-.trust-ribbon-track:focus-within {
-  animation-play-state: paused;
 }
 
 @media (max-width: 639px) {
