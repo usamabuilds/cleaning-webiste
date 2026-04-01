@@ -20,7 +20,9 @@ export type HomeCredibilityItem = {
 
 export type TrustMarkerItem = {
   id: string;
-  text: string;
+  label: string;
+  detail: string;
+  isPlaceholder: boolean;
   iconKey: "licence-compliance" | "map-coverage" | "clock-availability" | "stars-reviews" | "labour-service-inclusion";
 };
 
@@ -84,27 +86,37 @@ export const homeCredibilityItems: ReadonlyArray<HomeCredibilityItem> = [
 export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
   {
     id: "licensed-waste-carrier",
-    text: "Licensed waste carrier",
+    label: "Licensed waste carrier",
+    detail: "Licence reference pending verification.",
+    isPlaceholder: true,
     iconKey: "licence-compliance",
   },
   {
     id: "west-midlands-coverage",
-    text: `Coverage across the ${companyProfile.serviceRegion}`,
+    label: `Coverage across the ${companyProfile.serviceRegion}`,
+    detail: "Domestic and commercial collections across the West Midlands.",
+    isPlaceholder: false,
     iconKey: "map-coverage",
   },
   {
     id: "flexible-availability",
-    text: "Flexible collection availability",
+    label: "Flexible collection availability",
+    detail: "Availability window pending confirmation.",
+    isPlaceholder: true,
     iconKey: "clock-availability",
   },
   {
-    id: "customer-reviews",
-    text: "Customer reviews available",
+    id: "review-proof",
+    label: "Review proof",
+    detail: "Verified public review source pending confirmation.",
+    isPlaceholder: true,
     iconKey: "stars-reviews",
   },
   {
     id: "labour-included",
-    text: "Labour and loading included",
+    label: "Labour and loading included",
+    detail: "Team loading and lifting included where applicable.",
+    isPlaceholder: false,
     iconKey: "labour-service-inclusion",
   },
 ];
