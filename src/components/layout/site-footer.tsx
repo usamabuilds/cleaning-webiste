@@ -3,27 +3,7 @@ import Link from "next/link";
 import { CallButton } from "@/components/shared/call-button";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
-
-const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/house-clearance", label: "House Clearance" },
-  { href: "/bulky-waste-furniture-collection", label: "Bulky Waste & Furniture" },
-  { href: "/garden-shed-garage-clearance", label: "Garden, Shed & Garage" },
-  { href: "/commercial-waste-cardboard-collection", label: "Commercial Waste" },
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/areas-served", label: "Areas Served" },
-  { href: "/about", label: "About" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/faq", label: "FAQ" },
-  { href: companyProfile.quoteHref, label: "Get a Quote" },
-] as const;
-
-const legalLinks = [
-  { href: "/legal/privacy-policy", label: "Privacy Policy" },
-  { href: "/legal/terms", label: "Terms" },
-  { href: "/legal/licence-compliance", label: "Licence Compliance" },
-] as const;
+import { footerQuickNavigation, legalNavigation } from "@/lib/site";
 
 export function SiteFooter(): JSX.Element {
   return (
@@ -41,7 +21,7 @@ export function SiteFooter(): JSX.Element {
           <nav aria-label="Footer quick links" className="space-y-3">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-200">Quick links</h2>
             <ul className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
-              {quickLinks.map((link) => (
+              {footerQuickNavigation.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="inline-flex rounded-md px-1 py-1 text-slate-200 underline-offset-2 hover:text-white hover:underline">
                     {link.label}
@@ -73,7 +53,7 @@ export function SiteFooter(): JSX.Element {
           <nav aria-label="Legal links" className="space-y-3">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-200">Legal</h2>
             <ul className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
-              {legalLinks.map((link) => (
+              {legalNavigation.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="inline-flex rounded-md px-1 py-1 text-slate-300 underline-offset-2 hover:text-white hover:underline">
                     {link.label}

@@ -7,17 +7,7 @@ import { Menu, X } from "lucide-react";
 import { CallButton } from "@/components/shared/call-button";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/how-it-works", label: "How It Works" },
-  { href: "/areas-served", label: "Areas Served" },
-  { href: "/about", label: "About" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/faq", label: "FAQ" },
-  { href: companyProfile.quoteHref, label: "Get a Quote" },
-] as const;
+import { primaryNavigation } from "@/lib/site";
 
 export function SiteHeader(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +30,7 @@ export function SiteHeader(): JSX.Element {
 
         <div className="mt-1 hidden items-center justify-between gap-4 lg:flex">
           <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-            {navLinks.map((link) => (
+            {primaryNavigation.map((link) => (
               <Link key={link.href} href={link.href} className="font-medium text-slate-700 transition-colors hover:text-slate-900">
                 {link.label}
               </Link>
@@ -66,7 +56,7 @@ export function SiteHeader(): JSX.Element {
         <div id="site-nav-panel" className="z-overlay border-t border-slate-200 bg-white lg:hidden">
           <div className="section-frame py-3">
             <nav aria-label="Mobile primary" className="layer-content flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {primaryNavigation.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
