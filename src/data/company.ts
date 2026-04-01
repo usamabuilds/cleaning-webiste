@@ -24,6 +24,8 @@ export type TrustMarkerItem = {
   detail: string;
   isPlaceholder: boolean;
   iconKey: "licence-compliance" | "map-coverage" | "clock-availability" | "stars-reviews" | "labour-service-inclusion";
+  priority?: number;
+  publicEnabled?: boolean;
 };
 
 export const companyProfile: CompanyDetails = {
@@ -90,6 +92,8 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
     detail: "Licence reference pending verification.",
     isPlaceholder: true,
     iconKey: "licence-compliance",
+    priority: 1,
+    publicEnabled: true,
   },
   {
     id: "west-midlands-coverage",
@@ -97,6 +101,8 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
     detail: "Domestic and commercial collections across the West Midlands.",
     isPlaceholder: false,
     iconKey: "map-coverage",
+    priority: 2,
+    publicEnabled: true,
   },
   {
     id: "flexible-availability",
@@ -104,6 +110,8 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
     detail: "Availability window pending confirmation.",
     isPlaceholder: true,
     iconKey: "clock-availability",
+    priority: 4,
+    publicEnabled: true,
   },
   {
     id: "review-proof",
@@ -111,6 +119,8 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
     detail: "Verified public review source pending confirmation.",
     isPlaceholder: true,
     iconKey: "stars-reviews",
+    priority: 5,
+    publicEnabled: true,
   },
   {
     id: "labour-included",
@@ -118,5 +128,7 @@ export const trustMarkerItems: ReadonlyArray<TrustMarkerItem> = [
     detail: "Team loading and lifting included where applicable.",
     isPlaceholder: false,
     iconKey: "labour-service-inclusion",
+    priority: 3,
+    publicEnabled: true,
   },
 ];
