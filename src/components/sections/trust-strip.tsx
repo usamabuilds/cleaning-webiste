@@ -28,14 +28,9 @@ function TrustRibbonItems(): JSX.Element {
             : marker.iconKey === "stars-reviews"
               ? "Review proof"
               : marker.iconKey === "licence-compliance"
-                ? "Compliance details"
+              ? "Compliance details"
                 : marker.label
           : marker.label;
-        const detail = marker.isPlaceholder
-          ? marker.iconKey === "clock-availability"
-            ? "Availability details pending confirmation."
-            : "Proof pending confirmation."
-          : marker.detail;
 
         return (
           <li key={marker.id} className="shrink-0 py-0.5">
@@ -43,10 +38,6 @@ function TrustRibbonItems(): JSX.Element {
               <Icon size={14} className="shrink-0 text-slate-500" aria-hidden="true" />
               <span className="truncate whitespace-nowrap leading-none trust-chip-title">
                 {label}
-                <span className="mx-1.5 text-slate-400" aria-hidden="true">
-                  •
-                </span>
-                <span className="font-normal trust-chip-detail">{detail}</span>
               </span>
             </span>
           </li>
