@@ -34,8 +34,8 @@ function TrustRibbonItems(): JSX.Element {
 
         return (
           <li key={marker.id} className="shrink-0 py-0.5">
-            <span className="trust-chip text-xs font-medium text-slate-700 sm:text-sm">
-              <Icon size={14} className="shrink-0 text-slate-500" aria-hidden="true" />
+            <span className="trust-chip trust-chip-text text-xs font-medium sm:text-sm">
+              <Icon size={14} className="trust-chip-icon shrink-0" aria-hidden="true" />
               <span className="truncate whitespace-nowrap leading-none trust-chip-title">
                 {label}
               </span>
@@ -52,7 +52,7 @@ export function TrustStrip(): JSX.Element {
     <section
       id="trust"
       aria-label="Trust markers"
-      className="overflow-hidden rounded-xl border border-slate-200 bg-white px-3 py-1.5 sm:px-4 sm:py-2"
+      className="overflow-hidden rounded-xl border border-[#C9D6DF] bg-[#DCE6ED] px-3 py-1.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.65)] sm:px-4 sm:py-2"
     >
       <div className="trust-ribbon-viewport">
         <div className="trust-ribbon-track" role="presentation">
