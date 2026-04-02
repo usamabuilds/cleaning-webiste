@@ -17,7 +17,7 @@ const trustMarkerIcons: Record<TrustMarkerItem["iconKey"], LucideIcon> = {
   "labour-service-inclusion": Users,
 };
 
-function TrustRibbonItems(): JSX.Element {
+function TrustRibbonItems() {
   return (
     <>
       {trustMarkerItems.map((marker) => {
@@ -47,7 +47,7 @@ function TrustRibbonItems(): JSX.Element {
   );
 }
 
-export function TrustStrip(): JSX.Element {
+export function TrustStrip() {
   return (
     <section
       id="trust"

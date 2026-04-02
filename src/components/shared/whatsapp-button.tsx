@@ -16,7 +16,7 @@ export function WhatsAppButton({
   label = "WhatsApp us",
   variant = "solid",
   className,
-}: WhatsAppButtonProps): JSX.Element {
+}: WhatsAppButtonProps) {
   const href = `https://wa.me/${sanitizeWhatsAppNumber(number)}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
 
   return (

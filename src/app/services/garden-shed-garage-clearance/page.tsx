@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function GardenShedGarageClearancePage(): JSX.Element {
+export default function GardenShedGarageClearancePage() {
   return (
     <ContentTemplate
       intro={{

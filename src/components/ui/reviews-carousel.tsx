@@ -9,7 +9,7 @@ type ReviewsCarouselProps = {
   items: ReadonlyArray<ReviewItem>;
 };
 
-export function ReviewsCarousel({ items }: ReviewsCarouselProps): JSX.Element {
+export function ReviewsCarousel({ items }: ReviewsCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 

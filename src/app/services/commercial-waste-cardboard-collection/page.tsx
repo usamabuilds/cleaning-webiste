@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function CommercialWasteCardboardCollectionPage(): JSX.Element {
+export default function CommercialWasteCardboardCollectionPage() {
   return (
     <ContentTemplate
       intro={{

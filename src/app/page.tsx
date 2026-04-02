@@ -9,7 +9,7 @@ import { TrustStrip } from "@/components/sections/trust-strip";
 import { WhyChooseUsSection } from "@/components/sections/why-choose-us-section";
 import { SectionFrame } from "@/components/ui/section-frame";
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <main className="space-y-6 pb-24 sm:pb-8">
       <HeroSection />

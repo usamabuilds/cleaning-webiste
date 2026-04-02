@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "commercial waste collection",
   ],
   title: {
-    default: homeMetadata.title ?? companyProfile.brandName,
+    default: companyProfile.brandName,
     template: `%s | ${companyProfile.brandName}`,
   },
 };
@@ -43,7 +43,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>): JSX.Element {
+}>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="layer-base min-h-full">

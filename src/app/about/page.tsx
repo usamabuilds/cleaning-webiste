@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function AboutPage(): JSX.Element {
+export default function AboutPage() {
   return (
     <ContentTemplate
       intro={{

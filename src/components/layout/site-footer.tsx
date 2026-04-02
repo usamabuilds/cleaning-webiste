@@ -3,7 +3,7 @@ import Link from "next/link";
 import { companyProfile } from "@/data/company";
 import { primaryNavigation } from "@/lib/site";
 
-export function SiteFooter(): JSX.Element {
+export function SiteFooter() {
   return (
     <footer className="border-t border-slate-700 bg-slate-950 text-slate-100">
       <div className="section-frame py-10">

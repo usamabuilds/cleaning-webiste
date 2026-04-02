@@ -47,7 +47,7 @@ const homeServiceCards: ReadonlyArray<HomeServiceCard> = [
   },
 ];
 
-export function ServiceCardsSection(): JSX.Element {
+export function ServiceCardsSection() {
   return (
     <section
       id="services"

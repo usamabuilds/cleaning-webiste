@@ -4,7 +4,7 @@ import { CallButton } from "@/components/shared/call-button";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
 
-export function MobileStickyCta(): JSX.Element {
+export function MobileStickyCta() {
   return (
     <div data-sticky-cta="true" className="sticky-cta fixed inset-x-0 bottom-0 z-[70] p-2 sm:hidden">
       <div className="mx-auto grid max-w-2xl grid-cols-3 gap-2">
