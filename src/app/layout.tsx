@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "commercial waste collection",
   ],
   title: {
-    default: homeMetadata.title ?? companyProfile.brandName,
+    default: companyProfile.brandName,
     template: `%s | ${companyProfile.brandName}`,
   },
 };

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:jsx-namespace": "bash scripts/check-jsx-namespace.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
