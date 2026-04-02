@@ -24,7 +24,7 @@ export function SiteHeader(): JSX.Element {
           <div className="relative px-2 py-1.5 sm:px-3 sm:py-2">
             <div className="layer-content flex items-center justify-between gap-2 lg:hidden">
               <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
-                <Image src="/logotransparent.png" alt="Crucial Recycling logo" width={180} height={56} className="h-8 w-auto sm:h-9" priority />
+                <Image src="/finallogo.jpeg" alt="Crucial Recycling logo" width={220} height={88} className="h-9 w-auto sm:h-10" priority />
               </Link>
 
               <button
@@ -39,10 +39,10 @@ export function SiteHeader(): JSX.Element {
               </button>
             </div>
 
-            <div className="mt-1 hidden items-center justify-between gap-4 lg:flex">
+            <div className="hidden items-center justify-between gap-4 lg:flex">
               <div className="flex items-center gap-6">
                 <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
-                  <Image src="/logotransparent.png" alt="Crucial Recycling logo" width={200} height={62} className="h-10 w-auto" priority />
+                  <Image src="/finallogo.jpeg" alt="Crucial Recycling logo" width={240} height={96} className="h-11 w-auto" priority />
                 </Link>
 
                 <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
