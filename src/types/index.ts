@@ -17,6 +17,7 @@ export type WhatsAppButtonProps = {
 
 export type QuoteFormValues = {
   fullName: string;
+  email: string;
   phone: string;
   postcode: string;
   serviceType: string;
