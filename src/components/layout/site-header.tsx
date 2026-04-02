@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -7,7 +8,7 @@ import { Menu, X } from "lucide-react";
 import { CallButton } from "@/components/shared/call-button";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
-import { primaryNavigation } from "@/lib/site";
+import { primaryNavigation, ROUTES } from "@/lib/site";
 
 export function SiteHeader(): JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +22,14 @@ export function SiteHeader(): JSX.Element {
           <div className="pointer-events-none absolute inset-0 rounded-2xl shadow-[inset_0_1px_0_rgba(255,255,255,0.88),inset_0_-1px_0_rgba(148,163,184,0.14)]" />
 
           <div className="relative px-2 py-1.5 sm:px-3 sm:py-2">
-            <div className="layer-content flex items-center justify-end gap-2 sm:gap-4">
+            <div className="layer-content flex items-center justify-between gap-2 lg:hidden">
+              <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
+                <Image src="/logotransparent.png" alt="Crucial Recycling logo" width={180} height={56} className="h-8 w-auto sm:h-9" priority />
+              </Link>
+
               <button
                 type="button"
-                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/75 bg-white/70 text-[#1F2A44] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_1px_2px_rgba(15,23,42,0.08)] transition-colors hover:bg-white/85 lg:hidden"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/75 bg-white/70 text-[#1F2A44] shadow-[inset_0_1px_0_rgba(255,255,255,0.78),0_1px_2px_rgba(15,23,42,0.08)] transition-colors hover:bg-white/85"
                 aria-expanded={isMenuOpen}
                 aria-controls="site-nav-panel"
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -35,17 +40,23 @@ export function SiteHeader(): JSX.Element {
             </div>
 
             <div className="mt-1 hidden items-center justify-between gap-4 lg:flex">
-              <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
-                {primaryNavigation.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="font-medium text-[#1F2A44] transition-colors hover:text-[#4F8C8D]"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
+              <div className="flex items-center gap-6">
+                <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
+                  <Image src="/logotransparent.png" alt="Crucial Recycling logo" width={200} height={62} className="h-10 w-auto" priority />
+                </Link>
+
+                <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                  {primaryNavigation.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="font-medium text-[#1F2A44] transition-colors hover:text-[#4F8C8D]"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
 
               <div className="flex items-center gap-2">
                 <WhatsAppButton

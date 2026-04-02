@@ -29,10 +29,6 @@ export const primaryNavigation: ReadonlyArray<NavItem> = [
   { label: "Services", href: ROUTES.services },
   { label: "How It Works", href: ROUTES.howItWorks },
   { label: "Areas Served", href: ROUTES.areasServed },
-  { label: "About", href: ROUTES.about },
-  { label: "Reviews", href: ROUTES.reviews },
-  { label: "FAQ", href: ROUTES.faq },
-  { label: "Get a Quote", href: ROUTES.getAQuote },
 ];
 
 export const serviceNavigation: ReadonlyArray<NavItem> = [
