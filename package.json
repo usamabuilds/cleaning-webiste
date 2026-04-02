@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run check:jsx-namespace && next build",
     "start": "next start",
     "lint": "eslint",
     "check:jsx-namespace": "bash scripts/check-jsx-namespace.sh"
