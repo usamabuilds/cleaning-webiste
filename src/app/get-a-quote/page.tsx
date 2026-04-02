@@ -11,7 +11,7 @@ const processSteps = [
   "You get a clear next-step response.",
 ];
 
-export default function GetAQuotePage(): JSX.Element {
+export default function GetAQuotePage() {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
       <section className="overflow-hidden rounded-2xl border border-slate-200 bg-white">

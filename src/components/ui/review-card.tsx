@@ -5,7 +5,7 @@ type ReviewCardProps = {
   review: ReviewItem;
 };
 
-export function ReviewCard({ review }: ReviewCardProps): JSX.Element {
+export function ReviewCard({ review }: ReviewCardProps) {
   return (
     <article className="h-full rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.06)]">
       <div className="flex items-start justify-between gap-3">

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { reviews } from "@/data/reviews";
 import { ReviewsCarousel } from "@/components/ui/reviews-carousel";
 
-export function ReviewsSection(): JSX.Element {
+export function ReviewsSection() {
   return (
     <section
       id="reviews"

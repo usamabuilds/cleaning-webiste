@@ -1,6 +1,6 @@
 import { CtaRow, IntroBlock } from "@/components/shared/page-template";
 
-export default function PrivacyPolicyPage(): JSX.Element {
+export default function PrivacyPolicyPage() {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
       <IntroBlock

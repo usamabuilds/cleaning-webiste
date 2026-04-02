@@ -15,7 +15,7 @@ export function CallButton({
   label = "Call now",
   variant = "solid",
   className,
-}: CallButtonProps): JSX.Element {
+}: CallButtonProps) {
   return (
     <a
       href={`tel:${sanitizePhoneNumber(phoneNumber)}`}
