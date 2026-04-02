@@ -42,21 +42,15 @@ export default function GetAQuotePage(): JSX.Element {
             </ul>
           </div>
 
-          <div className="relative min-h-[240px] border-t border-slate-200 bg-slate-900 lg:min-h-full lg:border-l lg:border-t-0">
+          <div className="relative min-h-[240px] border-t border-slate-200 bg-slate-50 lg:min-h-full lg:border-l lg:border-t-0">
             <Image
-              src="/getaquote.png"
-              alt="Rubbish removal team handling a quote-ready collection"
+              src="/get-a-quote-illustration.svg"
+              alt="Illustration of a smooth quote request process with photo sharing and fast confirmation"
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 36vw, 100vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/65 via-slate-900/30 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
-              <p className="inline-flex rounded-lg border border-white/20 bg-black/30 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-                Quote support image
-              </p>
-            </div>
           </div>
         </div>
       </section>
