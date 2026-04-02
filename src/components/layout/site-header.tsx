@@ -23,8 +23,15 @@ export function SiteHeader(): JSX.Element {
 
           <div className="relative px-2 py-1.5 sm:px-3 sm:py-2">
             <div className="layer-content flex items-center justify-between gap-2 lg:hidden">
-              <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
-                <Image src="/finallogo.jpeg" alt="Crucial Recycling logo" width={220} height={88} className="h-9 w-auto sm:h-10" priority />
+              <Link href={ROUTES.home} className="inline-flex items-center py-0.5" aria-label="Go to homepage">
+                <Image
+                  src="/finallogo.jpeg"
+                  alt="Crucial Recycling logo"
+                  width={220}
+                  height={88}
+                  className="h-10 w-auto max-w-[180px] object-contain sm:max-w-[200px]"
+                  priority
+                />
               </Link>
 
               <button
@@ -40,9 +47,16 @@ export function SiteHeader(): JSX.Element {
             </div>
 
             <div className="hidden items-center justify-between gap-4 lg:flex">
-              <div className="flex items-center gap-6">
-                <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
-                  <Image src="/finallogo.jpeg" alt="Crucial Recycling logo" width={240} height={96} className="h-11 w-auto" priority />
+              <div className="flex items-center gap-5">
+                <Link href={ROUTES.home} className="inline-flex items-center py-0.5" aria-label="Go to homepage">
+                  <Image
+                    src="/finallogo.jpeg"
+                    alt="Crucial Recycling logo"
+                    width={240}
+                    height={96}
+                    className="h-11 w-auto max-w-[220px] object-contain"
+                    priority
+                  />
                 </Link>
 
                 <nav aria-label="Primary" className="layer-content flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
