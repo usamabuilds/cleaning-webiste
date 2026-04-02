@@ -2,12 +2,11 @@ import Image from "next/image";
 
 import { CallButton } from "@/components/shared/call-button";
 import { CtaRow } from "@/components/shared/page-template";
-import { QuoteForm } from "@/components/shared/quote-form";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
 
 const processSteps = [
-  "Share your details and upload photo(s).",
+  "Share your job details and photos on WhatsApp.",
   "We review access, load size, and service type.",
   "You get a clear next-step response.",
 ];
@@ -21,7 +20,7 @@ export default function GetAQuotePage(): JSX.Element {
             <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">Get a quote</p>
             <h1 className="mt-2 text-3xl font-bold text-slate-900 sm:text-4xl">Fast rubbish removal quotes across the West Midlands</h1>
             <p className="mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">
-              Send a few details and photos for a quicker estimate. Use the form below, or message/call if you want help right away.
+              Send a few details and photos for a quicker estimate. Message us on WhatsApp or call for a fast response.
             </p>
 
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -56,9 +55,20 @@ export default function GetAQuotePage(): JSX.Element {
       </section>
 
       <section className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-1">
-          <QuoteForm />
-        </div>
+        <article className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6">
+          <h2 className="text-xl font-bold text-emerald-950">Quick quote by WhatsApp or phone</h2>
+          <p className="mt-2 text-sm text-emerald-900 sm:text-base">
+            Share your postcode, a short description, and photos so we can guide your next step quickly.
+          </p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-2">
+            <CallButton phoneNumber={companyProfile.phoneNumber} label="Call for a quote" />
+            <WhatsAppButton
+              number={companyProfile.whatsappNumber}
+              message={companyProfile.whatsappDefaultMessage}
+              label="WhatsApp your details"
+            />
+          </div>
+        </article>
 
         <aside className="space-y-4">
           <article className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
