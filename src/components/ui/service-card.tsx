@@ -15,7 +15,7 @@ export function ServiceCard({
   href,
   ctaLabel,
   Icon,
-}: ServiceCardProps): JSX.Element {
+}: ServiceCardProps) {
   return (
     <Link
       href={href}

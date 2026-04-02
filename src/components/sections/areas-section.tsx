@@ -17,7 +17,7 @@ const coveragePoints: ReadonlyArray<{ name: string; positionClassName: string }>
   { name: "Wolverhampton", positionClassName: "left-[33%] top-[24%]" },
 ];
 
-export function AreasSection(): JSX.Element {
+export function AreasSection() {
   return (
     <section id="areas-served" aria-labelledby="areas-served-heading" className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-8">

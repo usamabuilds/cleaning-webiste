@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function BulkyWasteFurnitureCollectionPage(): JSX.Element {
+export default function BulkyWasteFurnitureCollectionPage() {
   return (
     <ContentTemplate
       intro={{

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { SectionFrame } from "@/components/ui/section-frame";
 
-export function HeroSection(): JSX.Element {
+export function HeroSection() {
   return (
     <SectionFrame className="overflow-hidden rounded-2xl">
       <section className="relative isolate h-[420px] md:h-[560px]">

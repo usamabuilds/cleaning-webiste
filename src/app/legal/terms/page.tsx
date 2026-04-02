@@ -1,6 +1,6 @@
 import { CtaRow, IntroBlock } from "@/components/shared/page-template";
 
-export default function TermsPage(): JSX.Element {
+export default function TermsPage() {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
       <IntroBlock

@@ -1,7 +1,7 @@
 import { CtaRow, IntroBlock } from "@/components/shared/page-template";
 import { companyProfile } from "@/data/company";
 
-export default function LicenceCompliancePage(): JSX.Element {
+export default function LicenceCompliancePage() {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
       <IntroBlock

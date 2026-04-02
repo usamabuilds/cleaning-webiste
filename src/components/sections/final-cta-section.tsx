@@ -4,7 +4,7 @@ import { CallButton } from "@/components/shared/call-button";
 import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
 
-export function FinalCtaSection(): JSX.Element {
+export function FinalCtaSection() {
   return (
     <section id="quote" aria-labelledby="final-cta-heading" className="rounded-2xl bg-slate-900 p-6 text-white sm:p-8">
       <h2 id="final-cta-heading" className="text-2xl font-bold">Need it cleared quickly?</h2>

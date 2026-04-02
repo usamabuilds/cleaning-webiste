@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function FaqPage(): JSX.Element {
+export default function FaqPage() {
   return (
     <ContentTemplate
       intro={{

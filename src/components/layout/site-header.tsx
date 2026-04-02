@@ -10,7 +10,7 @@ import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { companyProfile } from "@/data/company";
 import { primaryNavigation, ROUTES } from "@/lib/site";
 
-export function SiteHeader(): JSX.Element {
+export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

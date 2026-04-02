@@ -28,7 +28,7 @@ type ContentTemplateProps = {
   ctaLabel?: string;
 };
 
-export function IntroBlock({ eyebrow, title, description }: IntroBlockProps): JSX.Element {
+export function IntroBlock({ eyebrow, title, description }: IntroBlockProps) {
   return (
     <section className="rounded-2xl border border-slate-200 bg-slate-50 p-5 sm:p-8">
       {eyebrow ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-800">{eyebrow}</p> : null}
@@ -38,7 +38,7 @@ export function IntroBlock({ eyebrow, title, description }: IntroBlockProps): JS
   );
 }
 
-export function CtaRow({ label = "Need a fast quote?" }: { label?: string }): JSX.Element {
+export function CtaRow({ label = "Need a fast quote?" }: { label?: string }) {
   return (
     <section className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6">
       <p className="text-sm font-semibold text-emerald-900">{label}</p>
@@ -61,7 +61,7 @@ export function CtaRow({ label = "Need a fast quote?" }: { label?: string }): JS
   );
 }
 
-function SectionBlock({ title, body, bullets }: InfoSection): JSX.Element {
+function SectionBlock({ title, body, bullets }: InfoSection) {
   return (
     <article className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
       <h2 className="text-xl font-bold text-slate-900">{title}</h2>
@@ -80,7 +80,7 @@ function SectionBlock({ title, body, bullets }: InfoSection): JSX.Element {
   );
 }
 
-function FaqSubset({ items }: { items: FaqItem[] }): JSX.Element {
+function FaqSubset({ items }: { items: FaqItem[] }) {
   return (
     <section className="rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
       <h2 className="text-xl font-bold text-slate-900">Quick FAQs</h2>
@@ -96,7 +96,7 @@ function FaqSubset({ items }: { items: FaqItem[] }): JSX.Element {
   );
 }
 
-export function ContentTemplate({ intro, sections, faqItems, ctaLabel }: ContentTemplateProps): JSX.Element {
+export function ContentTemplate({ intro, sections, faqItems, ctaLabel }: ContentTemplateProps) {
   return (
     <main className="section-frame space-y-6 pb-24 sm:pb-8">
       <IntroBlock {...intro} />

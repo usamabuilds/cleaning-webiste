@@ -33,7 +33,7 @@ const workflowSteps: ReadonlyArray<WorkflowStep> = [
   },
 ];
 
-export function HowItWorksSection(): JSX.Element {
+export function HowItWorksSection() {
   return (
     <section id="how-it-works" aria-labelledby="how-it-works-heading" className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
       <h2 id="how-it-works-heading" className="text-2xl font-bold text-slate-900">

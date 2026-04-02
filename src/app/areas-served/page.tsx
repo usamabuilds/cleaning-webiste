@@ -1,6 +1,6 @@
 import { ContentTemplate } from "@/components/shared/page-template";
 
-export default function AreasServedPage(): JSX.Element {
+export default function AreasServedPage() {
   return (
     <ContentTemplate
       intro={{

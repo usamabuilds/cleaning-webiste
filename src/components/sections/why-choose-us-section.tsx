@@ -48,7 +48,7 @@ const proofCards: ReadonlyArray<ProofCard> = [
   },
 ];
 
-export function WhyChooseUsSection(): JSX.Element {
+export function WhyChooseUsSection() {
   return (
     <section
       id="why-choose-us"
