@@ -42,26 +42,31 @@ export function ReviewsCarousel({ items }: ReviewsCarouselProps): JSX.Element {
   };
 
   return (
-    <div>
-      <div className="flex items-center justify-end gap-2">
-        <button
-          type="button"
-          onClick={() => scrollToIndex(activeIndex - 1)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-emerald-400 hover:text-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label="Previous review"
-          disabled={activeIndex === 0}
-        >
-          <ChevronLeft size={16} aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollToIndex(activeIndex + 1)}
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-emerald-400 hover:text-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
-          aria-label="Next review"
-          disabled={activeIndex === items.length - 1}
-        >
-          <ChevronRight size={16} aria-hidden="true" />
-        </button>
+    <div aria-roledescription="carousel" aria-label="Sample customer reviews">
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-xs font-medium text-slate-500">
+          Card {activeIndex + 1} of {items.length}
+        </p>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex - 1)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-emerald-400 hover:text-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
+            aria-label="Previous review"
+            disabled={activeIndex === 0}
+          >
+            <ChevronLeft size={16} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollToIndex(activeIndex + 1)}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 transition hover:border-emerald-400 hover:text-emerald-700 disabled:cursor-not-allowed disabled:opacity-40"
+            aria-label="Next review"
+            disabled={activeIndex === items.length - 1}
+          >
+            <ChevronRight size={16} aria-hidden="true" />
+          </button>
+        </div>
       </div>
 
       <div
@@ -70,7 +75,7 @@ export function ReviewsCarousel({ items }: ReviewsCarouselProps): JSX.Element {
         className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         {items.map((review) => (
-          <div key={review.id} className="min-w-[85%] snap-start sm:min-w-[48%] lg:min-w-[32%]">
+          <div key={review.id} className="min-w-[86%] snap-start sm:min-w-[48%] lg:min-w-[32%]">
             <ReviewCard review={review} />
           </div>
         ))}

@@ -8,6 +8,7 @@ export type ReviewItem = {
     | "Commercial Waste & Cardboard Collection";
   rating: 4 | 5;
   quote: string;
+  highlight: "Fast" | "Clean" | "Punctual" | "Professional";
   isPlaceholder: true;
 };
 
@@ -18,7 +19,8 @@ export const reviews: ReadonlyArray<ReviewItem> = [
     serviceLabel: "House Clearance",
     rating: 5,
     quote:
-      "Sample placeholder: team arrived on time, cleared quickly, and left rooms tidy for handover.",
+      "Sample placeholder: quick arrival window, steady pace, and tidy finish ready for handover.",
+    highlight: "Fast",
     isPlaceholder: true,
   },
   {
@@ -27,7 +29,8 @@ export const reviews: ReadonlyArray<ReviewItem> = [
     serviceLabel: "Bulky Waste & Furniture Collection",
     rating: 4,
     quote:
-      "Sample placeholder: sofa and white goods removed the same day with polite and professional updates.",
+      "Sample placeholder: old furniture removed with care, floors left clean, and updates were clear.",
+    highlight: "Clean",
     isPlaceholder: true,
   },
   {
@@ -36,7 +39,8 @@ export const reviews: ReadonlyArray<ReviewItem> = [
     serviceLabel: "Garden / Shed / Garage Clearance",
     rating: 5,
     quote:
-      "Sample placeholder: outdoor clearance completed efficiently, swept down after loading, no hassle.",
+      "Sample placeholder: arrived when expected, loaded efficiently, and kept access routes tidy.",
+    highlight: "Punctual",
     isPlaceholder: true,
   },
   {
@@ -45,7 +49,8 @@ export const reviews: ReadonlyArray<ReviewItem> = [
     serviceLabel: "Commercial Waste & Cardboard Collection",
     rating: 4,
     quote:
-      "Sample placeholder: punctual collection slot, clean loading process, and clear communication for our site team.",
+      "Sample placeholder: polite team, organized collection, and a professional handover for site staff.",
+    highlight: "Professional",
     isPlaceholder: true,
   },
   {
@@ -54,7 +59,8 @@ export const reviews: ReadonlyArray<ReviewItem> = [
     serviceLabel: "House Clearance",
     rating: 5,
     quote:
-      "Sample placeholder: respectful crew, fast turnaround, and a professional finish before keys were returned.",
+      "Sample placeholder: practical approach, fast turnaround, and respectful communication throughout.",
+    highlight: "Fast",
     isPlaceholder: true,
   },
 ];
