@@ -25,11 +25,11 @@ export function SiteHeader(): JSX.Element {
             <div className="layer-content flex items-center justify-between gap-2 lg:hidden">
               <Link href={ROUTES.home} className="inline-flex items-center py-0.5" aria-label="Go to homepage">
                 <Image
-                  src="/finallogo.jpeg"
+                  src="/finallogo2.jpeg"
                   alt="Crucial Recycling logo"
-                  width={220}
-                  height={88}
-                  className="h-10 w-auto max-w-[180px] object-contain sm:max-w-[200px]"
+                  width={240}
+                  height={96}
+                  className="h-10 w-auto max-w-[190px] object-contain sm:max-w-[210px]"
                   priority
                 />
               </Link>
@@ -50,11 +50,11 @@ export function SiteHeader(): JSX.Element {
               <div className="flex items-center gap-5">
                 <Link href={ROUTES.home} className="inline-flex items-center py-0.5" aria-label="Go to homepage">
                   <Image
-                    src="/finallogo.jpeg"
+                    src="/finallogo2.jpeg"
                     alt="Crucial Recycling logo"
                     width={240}
                     height={96}
-                    className="h-11 w-auto max-w-[220px] object-contain"
+                    className="h-11 w-auto max-w-[230px] object-contain"
                     priority
                   />
                 </Link>
