@@ -15,15 +15,6 @@ export type WhatsAppButtonProps = {
   className?: string;
 };
 
-export type QuoteFormValues = {
-  fullName: string;
-  email: string;
-  phone: string;
-  postcode: string;
-  serviceType: string;
-  details: string;
-  photo: File | null;
-};
 
 export type CompanyProfile = {
   brandName: string;
