@@ -31,9 +31,9 @@ export type TrustMarkerItem = {
 export const companyProfile: CompanyDetails = {
   brandName: "Crucial Recycling",
   logoAlt: "Crucial Recycling logo",
-  phoneNumber: "+440000000000",
+  phoneNumber: "+447915234425",
   phoneLabel: "Call now",
-  whatsappNumber: "440000000000",
+  whatsappNumber: "447915234425",
   whatsappDefaultMessage: "Hi, I need a rubbish removal quote in the West Midlands.",
   whatsappLabel: "WhatsApp us",
   quoteHref: "/get-a-quote",
