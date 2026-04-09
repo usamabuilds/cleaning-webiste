@@ -34,7 +34,7 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`z-sticky sticky top-0 px-4 pt-4 transition-[background-color,color,box-shadow,border-color] duration-300 sm:px-6 lg:px-8 ${
+      className={`z-sticky sticky top-0 px-4 pt-[1.25rem] transition-[background-color,color,box-shadow,border-color] duration-300 sm:px-6 lg:px-8 ${
         isScrolled ? "bg-white text-[#174B3D] shadow-[0_12px_34px_rgba(15,23,42,0.08)]" : "bg-[#174B3D] text-white"
       }`}
     >
@@ -73,14 +73,14 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href={`tel:${companyProfile.phoneNumber}`}
-            className="hidden items-center rounded-full bg-[#B9F15B] px-5 py-2 text-sm font-semibold text-[#174B3D] transition-transform hover:-translate-y-0.5 lg:inline-flex"
+            className="hidden items-center rounded-full bg-[#B9F15B] px-5 py-[0.65rem] text-sm font-semibold text-[#174B3D] transition-transform hover:-translate-y-0.5 lg:inline-flex"
           >
             {companyProfile.phoneNumber}
           </Link>
 
           <button
             type="button"
-            className={`inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors lg:hidden ${
+            className={`inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors lg:hidden ${
               isScrolled
                 ? "border border-[#174B3D]/12 bg-[#174B3D]/6 text-[#174B3D] hover:bg-[#174B3D]/10"
                 : "border border-white/18 bg-white/6 text-white hover:bg-white/10"
@@ -121,7 +121,7 @@ export function SiteHeader() {
 
           <Link
             href={`tel:${companyProfile.phoneNumber}`}
-            className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full bg-[#B9F15B] px-5 py-2 text-sm font-semibold text-[#174B3D]"
+            className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-[#B9F15B] px-5 py-[0.65rem] text-sm font-semibold text-[#174B3D]"
             onClick={() => setIsMenuOpen(false)}
           >
             {companyProfile.phoneNumber}
