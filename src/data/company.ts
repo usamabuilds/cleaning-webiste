@@ -29,8 +29,8 @@ export type TrustMarkerItem = {
 };
 
 export const companyProfile: CompanyDetails = {
-  brandName: "Crucial Recycling",
-  logoAlt: "Crucial Recycling logo",
+  brandName: "Mop & Glow",
+  logoAlt: "Mop & Glow logo",
   phoneNumber: "+447915234425",
   phoneLabel: "Call now",
   whatsappNumber: "447915234425",

@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
-import { companyProfile } from "@/data/company";
 
 export function HeroSection() {
   return (
@@ -19,20 +16,6 @@ export function HeroSection() {
             and one-off visits.
           </p>
 
-          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row">
-            <Link
-              href={companyProfile.quoteHref}
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#B9F15B] px-7 py-3 text-sm font-semibold text-[#174B3D] transition-transform hover:-translate-y-0.5"
-            >
-              Book A Cleaning Now
-            </Link>
-            <Link
-              href={`tel:${companyProfile.phoneNumber}`}
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#B9F15B]/70 px-7 py-3 text-sm font-medium text-[#B9F15B] transition-colors hover:bg-white/5"
-            >
-              {companyProfile.phoneNumber}
-            </Link>
-          </div>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] bg-white/8 shadow-[0_20px_60px_rgba(0,0,0,0.2)] ring-1 ring-white/10">

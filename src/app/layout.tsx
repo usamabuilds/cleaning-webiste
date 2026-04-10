@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { MobileStickyCta } from "@/components/layout/mobile-sticky-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { companyProfile } from "@/data/company";
@@ -54,7 +53,6 @@ export default function RootLayout({
             <SiteHeader />
             {children}
             <SiteFooter />
-            <MobileStickyCta />
           </div>
         </div>
       </body>

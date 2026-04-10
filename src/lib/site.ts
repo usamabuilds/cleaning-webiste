@@ -28,7 +28,6 @@ export const primaryNavigation: ReadonlyArray<NavItem> = [
   { label: "Home", href: ROUTES.home },
   { label: "Services", href: ROUTES.services },
   { label: "How It Works", href: ROUTES.howItWorks },
-  { label: "Areas Served", href: ROUTES.areasServed },
 ];
 
 export const serviceNavigation: ReadonlyArray<NavItem> = [
@@ -53,7 +52,6 @@ export const footerQuickNavigation: ReadonlyArray<NavItem> = [
   { label: "Garden, Shed & Garage", href: ROUTES.gardenShedGarageClearance },
   { label: "Commercial Waste", href: ROUTES.commercialWasteCardboardCollection },
   { label: "How It Works", href: ROUTES.howItWorks },
-  { label: "Areas Served", href: ROUTES.areasServed },
   { label: "About", href: ROUTES.about },
   { label: "Reviews", href: ROUTES.reviews },
   { label: "FAQ", href: ROUTES.faq },

@@ -1,10 +1,5 @@
 import Image from "next/image";
 
-import { CallButton } from "@/components/shared/call-button";
-import { CtaRow } from "@/components/shared/page-template";
-import { WhatsAppButton } from "@/components/shared/whatsapp-button";
-import { companyProfile } from "@/data/company";
-
 const processSteps = [
   "Share your job details and photos on WhatsApp.",
   "We review access, load size, and service type.",
@@ -22,16 +17,6 @@ export default function GetAQuotePage() {
             <p className="mt-3 max-w-2xl text-sm text-slate-600 sm:text-base">
               Send a few details and photos for a quicker estimate. Message us on WhatsApp or call for a fast response.
             </p>
-
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              <CallButton phoneNumber={companyProfile.phoneNumber} label={companyProfile.phoneLabel} variant="solid" />
-              <WhatsAppButton
-                number={companyProfile.whatsappNumber}
-                message={companyProfile.whatsappDefaultMessage}
-                label={companyProfile.whatsappLabel}
-                variant="solid"
-              />
-            </div>
 
             <ul className="mt-5 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
               <li className="rounded-xl border border-slate-200 bg-slate-50 px-3 py-2">Send photos for a faster quote</li>
@@ -60,14 +45,6 @@ export default function GetAQuotePage() {
           <p className="mt-2 text-sm text-emerald-900 sm:text-base">
             Share your postcode, a short description, and photos so we can guide your next step quickly.
           </p>
-          <div className="mt-4 grid gap-3 sm:grid-cols-2">
-            <CallButton phoneNumber={companyProfile.phoneNumber} label="Call for a quote" />
-            <WhatsAppButton
-              number={companyProfile.whatsappNumber}
-              message={companyProfile.whatsappDefaultMessage}
-              label="WhatsApp your details"
-            />
-          </div>
         </article>
 
         <aside className="space-y-4">
@@ -95,8 +72,6 @@ export default function GetAQuotePage() {
           </article>
         </aside>
       </section>
-
-      <CtaRow label="Prefer to message first? Call or WhatsApp and we can guide your quote request." />
     </main>
   );
 }

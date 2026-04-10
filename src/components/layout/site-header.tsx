@@ -10,7 +10,6 @@ import { ROUTES } from "@/lib/site";
 const headerNavigation = [
   { label: "Home", href: ROUTES.home },
   { label: "Services", href: ROUTES.services },
-  { label: "Areas Served", href: ROUTES.areasServed },
   { label: "FAQ", href: ROUTES.faq },
   { label: "Blog", href: "/blog" },
 ] as const;
@@ -71,13 +70,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            href={`tel:${companyProfile.phoneNumber}`}
-            className="hidden items-center rounded-full bg-[#B9F15B] px-5 py-[0.65rem] text-sm font-semibold text-[#174B3D] transition-transform hover:-translate-y-0.5 lg:inline-flex"
-          >
-            {companyProfile.phoneNumber}
-          </Link>
-
           <button
             type="button"
             className={`inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors lg:hidden ${
@@ -119,13 +111,6 @@ export function SiteHeader() {
             ))}
           </nav>
 
-          <Link
-            href={`tel:${companyProfile.phoneNumber}`}
-            className="mt-4 inline-flex min-h-12 items-center justify-center rounded-full bg-[#B9F15B] px-5 py-[0.65rem] text-sm font-semibold text-[#174B3D]"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {companyProfile.phoneNumber}
-          </Link>
         </div>
       ) : null}
     </header>
