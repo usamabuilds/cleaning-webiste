@@ -1,1 +1,5 @@
-export default function Page() { return <main className="p-6">Page placeholder</main>; } 
+import { notFound } from "next/navigation";
+
+export default function Page() {
+  notFound();
+}

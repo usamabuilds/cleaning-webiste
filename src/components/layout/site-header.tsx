@@ -11,7 +11,6 @@ const headerNavigation = [
   { label: "Home", href: ROUTES.home },
   { label: "Services", href: ROUTES.services },
   { label: "FAQ", href: ROUTES.faq },
-  { label: "Blog", href: "/blog" },
 ] as const;
 
 export function SiteHeader() {

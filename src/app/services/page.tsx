@@ -116,7 +116,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="w-full px-4 pb-12 sm:px-6 sm:pb-14 lg:px-8 lg:pb-16">
+      <section className="w-full bg-[linear-gradient(90deg,#174B3D_0%,#295f50_18%,#dfe9e4_40%,#ffffff_60%,#ffffff_100%)] px-4 pb-12 pt-8 sm:px-6 sm:pb-14 sm:pt-10 lg:px-8 lg:pb-16 lg:pt-12">
         <div className="mx-auto grid w-full max-w-6xl gap-5 lg:grid-cols-2">
           {serviceItems.map((service, index) => {
             const isGreen = index % 2 === 1;
