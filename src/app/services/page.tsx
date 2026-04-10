@@ -1,8 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-
 type ServiceItem = {
   name: string;
   summary: string;
@@ -105,8 +100,6 @@ const serviceItems: ServiceItem[] = [
 ];
 
 export default function ServicesPage() {
-  const [openCard, setOpenCard] = useState<number | null>(0);
-
   return (
     <main className="space-y-8 pb-24 sm:pb-8">
       <section className="w-full bg-[#F8F7F2] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
@@ -127,7 +120,6 @@ export default function ServicesPage() {
         <div className="mx-auto grid w-full max-w-6xl gap-5 lg:grid-cols-2">
           {serviceItems.map((service, index) => {
             const isGreen = index % 2 === 1;
-            const isOpen = openCard === index;
 
             return (
               <article
@@ -138,12 +130,7 @@ export default function ServicesPage() {
                     : "border-[#174B3D]/10 bg-white text-[#111827]"
                 }`}
               >
-                <button
-                  type="button"
-                  className="flex w-full items-start justify-between gap-4 text-left"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpenCard(isOpen ? null : index)}
-                >
+                <div className="flex w-full items-start justify-between gap-4 text-left">
                   <div>
                     <p
                       className={`text-xs font-medium uppercase tracking-[0.22em] ${
@@ -157,44 +144,27 @@ export default function ServicesPage() {
                       {service.summary}
                     </p>
                   </div>
+                </div>
 
-                  <span
-                    className={`mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-                      isGreen ? "bg-white/10 text-white" : "bg-[#174B3D]/[0.05] text-[#174B3D]"
-                    } ${isOpen ? "rotate-180" : ""}`}
-                    aria-hidden
-                  >
-                    <ChevronDown className="h-5 w-5" />
-                  </span>
-                </button>
-
-                <div
-                  className={`grid transition-[grid-template-rows,opacity,margin] duration-300 ease-out ${
-                    isOpen ? "mt-5 grid-rows-[1fr] opacity-100" : "mt-0 grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <div className="overflow-hidden">
-                    <div className={`border-t pt-5 ${isGreen ? "border-white/12" : "border-[#174B3D]/10"}`}>
-                      <p className={`text-sm leading-6 ${isGreen ? "text-white/82" : "text-[#111827]/72"}`}>
-                        {service.details}
-                      </p>
-                      <ul className="mt-4 grid gap-2">
-                        {service.includes.map((item) => (
-                          <li key={item} className="flex items-start gap-3">
-                            <span
-                              className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
-                                isGreen ? "bg-[#B9F15B]" : "bg-[#174B3D]"
-                              }`}
-                              aria-hidden
-                            />
-                            <span className={`text-sm leading-6 ${isGreen ? "text-white/82" : "text-[#111827]/72"}`}>
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
+                <div className={`mt-5 border-t pt-5 ${isGreen ? "border-white/12" : "border-[#174B3D]/10"}`}>
+                  <p className={`text-sm leading-6 ${isGreen ? "text-white/82" : "text-[#111827]/72"}`}>
+                    {service.details}
+                  </p>
+                  <ul className="mt-4 grid gap-2">
+                    {service.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span
+                          className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
+                            isGreen ? "bg-[#B9F15B]" : "bg-[#174B3D]"
+                          }`}
+                          aria-hidden
+                        />
+                        <span className={`text-sm leading-6 ${isGreen ? "text-white/82" : "text-[#111827]/72"}`}>
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </article>
             );
