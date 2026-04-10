@@ -1,3 +1,5 @@
+import { companyProfile } from "@/data/company";
+
 type ServiceItem = {
   name: string;
   summary: string;
@@ -112,7 +114,14 @@ export default function ServicesPage() {
             Explore the full range of Mop &amp; Glow services, from regular home upkeep to specialist one-off cleans.
             Each service card expands for a quick snapshot of what it covers.
           </p>
-
+          <a
+            href={companyProfile.quoteHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 inline-flex min-h-12 w-fit items-center justify-center rounded-xl bg-[#174B3D] px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+          >
+            Get a Quote
+          </a>
         </div>
       </section>
 
