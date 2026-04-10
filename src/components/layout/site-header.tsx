@@ -1,11 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-import { companyProfile } from "@/data/company";
 import { ROUTES } from "@/lib/site";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+});
 
 const headerNavigation = [
   { label: "Home", href: ROUTES.home },
@@ -36,26 +42,23 @@ export function SiteHeader() {
         isScrolled ? "bg-white text-[#174B3D] shadow-[0_12px_34px_rgba(15,23,42,0.08)]" : "bg-[#174B3D] text-white"
       }`}
     >
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
-        <Link href={ROUTES.home} className="inline-flex items-center gap-2.5" aria-label="Go to homepage">
-          <span className={`h-4 w-4 rounded-full ${isScrolled ? "bg-[#174B3D]" : "bg-[#B9F15B]"}`} aria-hidden />
-          <span className="leading-none">
-            <span className={`block text-lg font-semibold tracking-tight ${isScrolled ? "text-[#174B3D]" : "text-white"}`}>
-              Mop &amp; Glow
-            </span>
-            <span
-              className={`block pt-1 text-[0.65rem] uppercase tracking-[0.32em] ${
-                isScrolled ? "text-[#174B3D]/55" : "text-white/55"
-              }`}
-            >
-              cleaning services
-            </span>
-          </span>
+      <div className="mx-auto relative flex w-full max-w-6xl items-center justify-between gap-4">
+        <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
+          <Image
+            src="/logoffffff.png"
+            alt="Mop & Glow logo"
+            width={220}
+            height={88}
+            priority
+            className="h-12 w-auto object-contain sm:h-14"
+          />
         </Link>
 
         <nav
           aria-label="Primary"
-          className={`hidden items-center gap-7 text-sm lg:flex ${isScrolled ? "text-[#174B3D]/80" : "text-white/80"}`}
+          className={`${inter.className} absolute left-1/2 hidden -translate-x-1/2 items-center justify-center gap-7 text-sm font-bold lg:flex ${
+            isScrolled ? "text-[#174B3D]/80" : "text-white/80"
+          }`}
         >
           {headerNavigation.map((link) => (
             <Link
@@ -68,7 +71,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-end gap-3">
           <button
             type="button"
             className={`inline-flex h-12 w-12 items-center justify-center rounded-full transition-colors lg:hidden ${
