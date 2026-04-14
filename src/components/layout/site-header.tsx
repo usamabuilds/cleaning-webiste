@@ -46,7 +46,7 @@ export function SiteHeader() {
         <Link href={ROUTES.home} className="inline-flex items-center" aria-label="Go to homepage">
           <Image
             src="/logoffffff.png"
-            alt="Mop & Glow logo"
+            alt="JB Cleaning logo"
             width={220}
             height={88}
             priority

@@ -29,14 +29,14 @@ export type TrustMarkerItem = {
 };
 
 export const companyProfile: CompanyDetails = {
-  brandName: "Mop & Glow",
-  logoAlt: "Mop & Glow logo",
+  brandName: "JB Cleaning",
+  logoAlt: "JB Cleaning logo",
   phoneNumber: "+447915234425",
   phoneLabel: "Call now",
   whatsappNumber: "447395333663",
-  whatsappDefaultMessage: "Hi, I need a cleaning quote from Mop & Glow.",
+  whatsappDefaultMessage: "Hi, I need a cleaning quote from JB Cleaning.",
   whatsappLabel: "WhatsApp us",
-  quoteHref: "https://wa.me/447395333663?text=Hi%2C%20I%20need%20a%20cleaning%20quote%20from%20Mop%20%26%20Glow.",
+  quoteHref: "https://wa.me/447395333663?text=Hi%2C%20I%20need%20a%20cleaning%20quote%20from%20JB%20Cleaning.",
   serviceRegion: "West Midlands",
   primaryCtaLabel: "Get a quote",
   emailAddress: "hello@example.com",

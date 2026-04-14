@@ -111,7 +111,7 @@ export default function ServicesPage() {
             Cleaning services designed for real homes, busy schedules, and polished results.
           </h1>
           <p className="max-w-3xl text-base leading-7 text-[#111827]/70 sm:text-lg">
-            Explore the full range of Mop &amp; Glow services, from regular home upkeep to specialist one-off cleans.
+            Explore the full range of JB Cleaning services, from regular home upkeep to specialist one-off cleans.
             Each service card expands for a quick snapshot of what it covers.
           </p>
           <a
