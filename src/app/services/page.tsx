@@ -3,101 +3,118 @@ import { companyProfile } from "@/data/company";
 type ServiceItem = {
   name: string;
   summary: string;
-  details: string;
   includes: string[];
 };
 
 const serviceItems: ServiceItem[] = [
   {
-    name: "Regular Cleaning",
-    summary: "Ongoing home cleaning to keep everyday spaces fresh, tidy, and under control.",
-    details:
-      "Ideal for weekly, fortnightly, or routine visits covering the rooms that need steady upkeep without the fuss of a full reset every time.",
-    includes: ["Kitchen and bathroom wipe-downs", "Dusting and vacuuming", "General surface and floor care"],
+    name: "Domestic Cleaning",
+    summary: "Keep your home fresh, tidy, and easier to manage with reliable cleaning built around your routine.",
+    includes: [
+      "One-off Deep Cleans",
+      "Weekly Housekeeping",
+      "Fortnightly Housekeeping",
+      "Carpet Cleaning",
+      "Stain Removal",
+      "Conservatory Cleaning",
+      "Ironing",
+      "Laundry Services",
+    ],
   },
   {
-    name: "Deep Cleaning",
-    summary: "A more intensive clean for homes that need extra attention from top to bottom.",
-    details:
-      "Best for seasonal resets, neglected areas, or before special occasions when a standard clean is not enough to get everything feeling properly refreshed.",
-    includes: ["Built-up grime removal", "Detailed bathroom and kitchen work", "Attention to edges, corners, and neglected spots"],
+    name: "Commercial Cleaning",
+    summary:
+      "Flexible cleaning for business spaces that need to stay clean, presentable, and ready for daily operations.",
+    includes: [
+      "Regular Commercial Cleaning",
+      "Flexible Cleaning Contracts",
+      "One-off Commercial Cleans",
+      "Deep Cleans",
+      "Builders' Cleans",
+      "Commercial End-of-Tenancy Cleaning",
+    ],
   },
   {
-    name: "One-Off Cleaning",
-    summary: "Flexible single-visit cleaning when you need the house sorted without a recurring plan.",
-    details:
-      "A practical option for busy weeks, post-event tidying, or whenever you want a reliable reset without committing to a regular schedule.",
-    includes: ["Single booked visit", "Tailored room priorities", "Suitable for ad-hoc home refreshes"],
+    name: "Office Cleaning",
+    summary:
+      "Keep your office clean, organised, and professional with a service that works around your business hours.",
+    includes: [
+      "Scheduled Office Cleaning",
+      "Morning Cleaning",
+      "Evening Cleaning",
+      "Weekend Cleaning",
+      "Custom Office Cleaning Plans",
+      "Free Consultation",
+    ],
   },
   {
     name: "End of Tenancy Cleaning",
-    summary: "Move-out cleaning designed to leave the property tidy, presentable, and ready for handover.",
-    details:
-      "Useful for tenants, landlords, and letting situations where the property needs a detailed clean before keys are returned or new occupants arrive.",
-    includes: ["Kitchen and bathroom detailing", "Cupboards, surfaces, and floors", "Presentation-ready finish"],
+    summary:
+      "A thorough top-to-bottom clean for rented properties before handover, helping leave the right final impression.",
+    includes: [
+      "Bathroom Cleaning",
+      "Bedroom Cleaning",
+      "Living Room Cleaning",
+      "Lounge Cleaning",
+      "Hall Cleaning",
+      "Stairs and Landing Cleaning",
+      "Skirting, Sockets and Switches Cleaning",
+      "Carpet Deep Cleaning",
+      "Rug Cleaning",
+    ],
   },
   {
     name: "After Builders Cleaning",
-    summary: "Post-renovation cleaning to clear dust, residue, and the mess left after works are finished.",
-    details:
-      "Focused on making the space feel livable again after decorating, repairs, fitting work, or building projects have wrapped up.",
-    includes: ["Fine dust clean-down", "Surface and floor attention", "Kitchen and bathroom reset after works"],
+    summary:
+      "Clear away dust, debris, and post-build mess with a detailed clean that gets the space ready to use again.",
+    includes: [
+      "Dust Removal",
+      "Furniture Cleaning",
+      "Hard Floor Polishing",
+      "Floor Scrubbing",
+      "Building Material Removal",
+      "Wall Spot Cleaning",
+      "Carpet Vacuuming",
+      "Window Washing",
+      "Surface Wipe-Downs",
+    ],
   },
   {
-    name: "Airbnb & Short-Term Rental Cleaning",
-    summary: "Fast turnaround cleaning to keep short-stay properties ready for incoming guests.",
-    details:
-      "Designed for hosts who need dependable presentation standards, efficient resets, and a clean, guest-ready finish between bookings.",
-    includes: ["Guest-ready room reset", "Bathroom and kitchen refresh", "Turnaround-focused cleaning visits"],
+    name: "Holiday Let Cleaning",
+    summary:
+      "Keep your short-stay property guest-ready with detailed changeover cleaning that supports a five-star experience.",
+    includes: [
+      "Full Changeover Cleaning",
+      "Bin Emptying and Liner Replacement",
+      "Bed Making",
+      "Linen Replacement",
+      "Towel Replacement",
+      "Toiletry Restocking",
+      "Laundry",
+      "Ironing",
+      "Washing Up",
+      "Dishwasher Emptying / Stacking",
+      "Inventory Checks",
+      "Damage Reporting",
+    ],
   },
   {
-    name: "Office & Business Cleaning",
-    summary: "Professional cleaning support for workspaces that need to stay presentable and welcoming.",
-    details:
-      "Suitable for offices, studios, and business premises that need reliable upkeep with a clean, polished finish for staff and visitors.",
-    includes: ["Desk and shared surface cleaning", "Reception and workspace upkeep", "Washroom and kitchen area attention"],
-  },
-  {
-    name: "Communal Area Cleaning",
-    summary: "Cleaning for shared internal spaces in buildings, blocks, and managed properties.",
-    details:
-      "A practical service for keeping entrances, hallways, stairwells, and common-use spaces tidy, fresh, and better maintained.",
-    includes: ["Entrance and hallway upkeep", "Stair and landing cleaning", "Shared touchpoint attention"],
-  },
-  {
-    name: "Carpet & Upholstery Cleaning",
-    summary: "Fabric and soft-surface cleaning to help rooms feel fresher and better cared for.",
-    details:
-      "Useful for households and rental properties where carpets, sofas, and upholstered pieces need a cleaner, more revived finish.",
-    includes: ["Carpet refresh", "Sofa and chair cleaning", "Targeted soft-furnishing care"],
-  },
-  {
-    name: "Caravan Cleaning",
-    summary: "Interior cleaning for caravans that need a tidy, comfortable, holiday-ready finish.",
-    details:
-      "Great before trips, after heavy use, or when preparing the caravan for guests, storage, or a fresh seasonal start.",
-    includes: ["Interior wipe-down and reset", "Compact kitchen and bathroom cleaning", "Sleeping and seating area refresh"],
-  },
-  {
-    name: "Oven Cleaning",
-    summary: "Dedicated oven cleaning to lift grease and restore a cleaner, brighter finish.",
-    details:
-      "A focused service for ovens that need more than day-to-day wiping, helping cooking spaces feel fresher and better maintained.",
-    includes: ["Grease and residue removal", "Inner surface clean-down", "Door and visible detail cleaning"],
-  },
-  {
-    name: "Fridge Cleaning",
-    summary: "Detailed fridge cleaning for a fresher, cleaner food-storage space.",
-    details:
-      "Useful during home resets, end of tenancy work, or before restocking when the inside of the fridge needs proper attention.",
-    includes: ["Shelf and drawer cleaning", "Interior wipe-down", "Freshen-up of visible spills and marks"],
-  },
-  {
-    name: "Interior Window Cleaning",
-    summary: "Interior glass and window cleaning to brighten rooms and improve the finish of the home.",
-    details:
-      "Ideal as part of a deeper reset or when visible smudges, dust, and marks on interior glazing start affecting the overall feel of the space.",
-    includes: ["Interior glass cleaning", "Frame and sill wipe-down", "Cleaner, brighter room finish"],
+    name: "Ironing & Laundry Services",
+    summary:
+      "Simple, convenient ironing and laundry support for busy homes, holiday lets, and regular weekly needs.",
+    includes: [
+      "Clothing Ironing",
+      "Bedding Ironing",
+      "Garment Ironing",
+      "Bedding Laundry",
+      "Towel Laundry",
+      "Collection Service",
+      "Delivery Service",
+      "Weekly Service",
+      "Bi-Weekly Service",
+      "Monthly Service",
+      "One-off Service",
+    ],
   },
 ];
 
@@ -156,10 +173,7 @@ export default function ServicesPage() {
                 </div>
 
                 <div className={`mt-5 border-t pt-5 ${isGreen ? "border-white/12" : "border-[#174B3D]/10"}`}>
-                  <p className={`text-sm leading-6 ${isGreen ? "text-white/82" : "text-[#111827]/72"}`}>
-                    {service.details}
-                  </p>
-                  <ul className="mt-4 grid gap-2">
+                  <ul className="grid gap-2">
                     {service.includes.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span
